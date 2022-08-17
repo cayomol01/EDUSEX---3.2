@@ -1,172 +1,142 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Image, ScrollView, StatusBar } from 'react-native';
 
-const preserPrueba = [
-  {
-    name: "Anillo",
-  },
-  {
-    name: "Capuchón",
-  },
-  {
-    name: "Condon Femenino",
-  },
-  {
-    name: "Condon Masculino",
-  },
-  {
-    name: "Diafragma",
-  },
-  {
-    name: "Espermicida",
-  },
-  {
-    name: "Esponja",
-  },
-  {
-    name: "Inyeccion",
-  },
-  {
-    name: "Parche",
-  },
-  {
-    name: "Pastilla",
-  },
-]
-
-export default class Condoms extends React.Component {
-  render() {
-    return (
-      <>
-        <View style={styles.container3}><Text style={styles.textTittle}>PRESERVATIVOS</Text></View>
-        <ScrollView style={styles.scrollView}>
-          <View style={{ flex : 1, justifyContent : 'center', padding : 15 }}>
-            <TouchableOpacity>
-              <View style={styles.container}>
-                <Image style={styles.image} source={ require('../.././assets/anillo.png' ) } />
+const Condoms = ( {navigation} ) => {
+  return (
+    <>
+      <View style={styles.container3}><Text style={styles.textTittle}>PRESERVATIVOS</Text></View>
+      <ScrollView style={styles.scrollView}>
+        <View style={{ flex : 1, justifyContent : 'center', padding : 15 }}>
+          <TouchableOpacity 
+            onPress = {
+              () => navigation.navigate('Screen1')
+          }>
+            <View style={styles.container}>
+              <Image style={styles.image} source={ require('../.././assets/anillo.png' ) } />
 
 
-                <View style={styles.textContainer}>
-                  <Text style={styles.text}>
-                    Anillo Vaginal
-                  </Text>
-                </View>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Anillo Vaginal
+                </Text>
               </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.container}>
-                <Image style={styles.image} source={ require('../.././assets/capuchon.png' ) } />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.container}>
+              <Image style={styles.image} source={ require('../.././assets/capuchon.png' ) } />
 
 
-                <View style={styles.textContainer}>
-                  <Text style={styles.text}>
-                    Capuchón Cervical
-                  </Text>
-                </View>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Capuchón Cervical
+                </Text>
               </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.container}>
-                <Image style={styles.image} source={ require('../.././assets/cFemenino.png' ) } />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.container}>
+              <Image style={styles.image} source={ require('../.././assets/cFemenino.png' ) } />
 
 
-                <View style={styles.textContainer}>
-                  <Text style={styles.text}>
-                    Condón Femenino
-                  </Text>
-                </View>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Condón Femenino
+                </Text>
               </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.container}>
-                <Image style={styles.image} source={ require('../.././assets/condon.png') } />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.container}>
+              <Image style={styles.image} source={ require('../.././assets/condon.png') } />
 
 
-                <View style={styles.textContainer}>
-                  <Text style={styles.text}>
-                    Condón Masculino
-                  </Text>
-                </View>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Condón Masculino
+                </Text>
               </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.container}>
-                <Image style={styles.image} source={ require('../.././assets/diafragma.png' ) } />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.container}>
+              <Image style={styles.image} source={ require('../.././assets/diafragma.png' ) } />
 
 
-                <View style={styles.textContainer}>
-                  <Text style={styles.text}>
-                    Diafragma
-                  </Text>
-                </View>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Diafragma
+                </Text>
               </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.container}>
-                <Image style={styles.image} source={ require('../.././assets/espermicida.png') } />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.container}>
+              <Image style={styles.image} source={ require('../.././assets/espermicida.png') } />
 
 
-                <View style={styles.textContainer}>
-                  <Text style={styles.text}>
-                    Espermicida
-                  </Text>
-                </View>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Espermicida
+                </Text>
               </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.container}>
-                <Image style={styles.image} source={ require('../.././assets/esponja.png') } />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.container}>
+              <Image style={styles.image} source={ require('../.././assets/esponja.png') } />
 
 
-                <View style={styles.textContainer}>
-                  <Text style={styles.text}>
-                    Esponja Anticonceptiva
-                  </Text>
-                </View>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Esponja Anticonceptiva
+                </Text>
               </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.container}>
-                <Image style={styles.image} source={ require('../.././assets/inyeccion.png') } />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.container}>
+              <Image style={styles.image} source={ require('../.././assets/inyeccion.png') } />
 
 
-                <View style={styles.textContainer}>
-                  <Text style={styles.text}>
-                    Inyeccion Anticonceptiva
-                  </Text>
-                </View>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Inyeccion Anticonceptiva
+                </Text>
               </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.container}>
-                <Image style={styles.image} source={ require('../.././assets/parche.png') } />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.container}>
+              <Image style={styles.image} source={ require('../.././assets/parche.png') } />
 
 
-                <View style={styles.textContainer}>
-                  <Text style={styles.text}>
-                    Parche Anticonceptivo
-                  </Text>
-                </View>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Parche Anticonceptivo
+                </Text>
               </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.container}>
-                <Image style={styles.image} source={ require('../.././assets/pastilla.png') } />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.container}>
+              <Image style={styles.image} source={ require('../.././assets/pastilla.png') } />
 
 
-                <View style={styles.textContainer}>
-                  <Text style={styles.text}>
-                    Pastilla
-                  </Text>
-                </View>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Pastilla
+                </Text>
               </View>
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
-      </>
-    );
-  }
+            </View>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </>
+  );
 }
+
+export default Condoms
 
 const styles = StyleSheet.create({
   container : {

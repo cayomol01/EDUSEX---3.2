@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import Condoms from './components/condoms/Condoms.js';
+import MainStack from './navigation/MainStack.js';
 
 export default function App() {
   return (
@@ -9,7 +9,7 @@ export default function App() {
     //     <StatusBar style="auto" />
     //   </SafeAreaView>
     // </SafeAreaProvider>
-    <Condoms></Condoms>
+    <MainStack></MainStack>
   );
 }
 
