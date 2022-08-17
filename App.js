@@ -1,15 +1,15 @@
-import { SafeAreaProvider, SaveAreaView } from 'react-native-safe-area-context';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import Condoms from './components/condoms/Condoms.js';
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <StatusBar style="auto" />
-      </SafeAreaView>
-    </SafeAreaProvider>
+    // <SafeAreaProvider>
+    //   <SafeAreaView style={styles.container}>
+    //     <Text>Open up App.js to start working on your app!</Text>
+    //     <StatusBar style="auto" />
+    //   </SafeAreaView>
+    // </SafeAreaProvider>
+    <Condoms></Condoms>
   );
 }
 
