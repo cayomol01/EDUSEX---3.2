@@ -22,7 +22,10 @@ const Condoms = ( {navigation} ) => {
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity 
+            onPress = {
+              () => navigation.navigate('Screen2')
+          }>
             <View style={styles.container}>
               <Image style={styles.image} source={ require('../.././assets/capuchon.png' ) } />
 
@@ -34,7 +37,10 @@ const Condoms = ( {navigation} ) => {
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity 
+            onPress = {
+              () => navigation.navigate('Screen3')
+          }>
             <View style={styles.container}>
               <Image style={styles.image} source={ require('../.././assets/cFemenino.png' ) } />
 
@@ -46,7 +52,10 @@ const Condoms = ( {navigation} ) => {
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity 
+            onPress = {
+              () => navigation.navigate('Screen4')
+          }>
             <View style={styles.container}>
               <Image style={styles.image} source={ require('../.././assets/condon.png') } />
 
@@ -58,7 +67,10 @@ const Condoms = ( {navigation} ) => {
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity 
+            onPress = {
+              () => navigation.navigate('Screen5')
+          }>
             <View style={styles.container}>
               <Image style={styles.image} source={ require('../.././assets/diafragma.png' ) } />
 
@@ -70,19 +82,25 @@ const Condoms = ( {navigation} ) => {
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity 
+            onPress = {
+              () => navigation.navigate('Screen6')
+          }>
             <View style={styles.container}>
               <Image style={styles.image} source={ require('../.././assets/espermicida.png') } />
 
 
               <View style={styles.textContainer}>
                 <Text style={styles.text}>
-                  Espermicida
+                  Espermicida y Gel
                 </Text>
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity 
+            onPress = {
+              () => navigation.navigate('Screen7')
+          }>
             <View style={styles.container}>
               <Image style={styles.image} source={ require('../.././assets/esponja.png') } />
 
@@ -94,19 +112,25 @@ const Condoms = ( {navigation} ) => {
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity 
+            onPress = {
+              () => navigation.navigate('Screen8')
+          }>
             <View style={styles.container}>
               <Image style={styles.image} source={ require('../.././assets/inyeccion.png') } />
 
 
               <View style={styles.textContainer}>
                 <Text style={styles.text}>
-                  Inyeccion Anticonceptiva
+                  Inyección Anticonceptiva
                 </Text>
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity 
+            onPress = {
+              () => navigation.navigate('Screen9')
+          }>
             <View style={styles.container}>
               <Image style={styles.image} source={ require('../.././assets/parche.png') } />
 
@@ -118,7 +142,10 @@ const Condoms = ( {navigation} ) => {
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity 
+            onPress = {
+              () => navigation.navigate('Screen10')
+          }>
             <View style={styles.container}>
               <Image style={styles.image} source={ require('../.././assets/pastilla.png') } />
 
