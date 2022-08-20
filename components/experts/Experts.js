@@ -71,6 +71,31 @@ const Experts = ( {navigation} ) => {
                 </View>   
             </ScrollView>
         </View>
+        <View style={styles.menu}>
+            <View style={{flex: 1, flexDirection: 'row'}}>
+                <TouchableOpacity>
+                    <Image style={styles.iconsMenu} source={ require('../.././assets/guides.png') } />
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress = {
+                    () => navigation.navigate('Condoms')
+                }>
+                    <Image style={styles.iconsMenu} source={ require('../.././assets/preser.png') } />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Image style={styles.iconsMenu} source={ require('../.././assets/home.png') } />
+                </TouchableOpacity>
+                <TouchableOpacity
+                onPress = {
+                    () => navigation.navigate('Experts')
+                }>
+                <Image style={styles.iconsMenu} source={ require('../.././assets/questions.png') } />
+                    </TouchableOpacity>
+                <TouchableOpacity>
+                    <Image style={styles.iconsMenu} source={ require('../.././assets/profile.png') } />
+                </TouchableOpacity>
+            </View>
+        </View>
     </>
   );
 }
@@ -175,4 +200,19 @@ const styles = StyleSheet.create({
     marginBottom: 8, 
     marginLeft: -15
   },
+
+  menu: {
+    width: '100%',
+    height: '10%',
+    marginTop: 10
+  },
+
+  iconsMenu: {
+    marginTop: 10,
+    width : '50%',
+    height : '50%',
+    resizeMode: 'contain',
+    padding: 18,
+    marginLeft: 35
+  }
 });

@@ -11,20 +11,45 @@ const ScreenExp1 = ( {navigation} ) => {
         <Text style={styles.textTittleDr}>Dr. Orellana</Text>
       </View>
       <View style={styles.containerDr3}>
-      <ScrollView style={styles.scrollView}>
-        <Text>El Dr. Orellana es un ginecólogo altamente cualificado y con experiencia que ofrece un trato totalmente personalizado y de calidad a sus pacientes.</Text>
-        <Text>{"\n\n"}Teléfono: ####-####{"\n\n"}Correo electrónico: ---@gmail.com{"\n\n"}Dirección{"\n\n"}6a. Ave. 6-63 zona 10 Edificio Sixtino 1, Nivel 10, Oficina 1004{"\n\n"}(Parqueo adentro del Edificio Sixtino 1)</Text>
-        <TouchableOpacity 
-            onPress = {
-            () => navigation.navigate('Screen1')
-        }>
-            <View style={styles.containerQ}>
-                <Text style={styles.detailsQ}>Realiza tus preguntas :)</Text>
-                <Image style={styles.imageQ} source={ require('../.././assets/next.png') } />
-            </View>
-        </TouchableOpacity>
-      </ScrollView>
+        <ScrollView style={styles.scrollView}>
+            <Text>El Dr. Orellana es un ginecólogo altamente cualificado y con experiencia que ofrece un trato totalmente personalizado y de calidad a sus pacientes.</Text>
+            <Text>{"\n\n"}Teléfono: ####-####{"\n\n"}Correo electrónico: ---@gmail.com{"\n\n"}Dirección{"\n\n"}6a. Ave. 6-63 zona 10 Edificio Sixtino 1, Nivel 10, Oficina 1004{"\n\n"}(Parqueo adentro del Edificio Sixtino 1)</Text>
+            <TouchableOpacity 
+                onPress = {
+                () => navigation.navigate('Screen1')
+            }>
+                <View style={styles.containerQ}>
+                    <Text style={styles.detailsQ}>Realiza tus preguntas :)</Text>
+                    <Image style={styles.imageQ} source={ require('../.././assets/next.png') } />
+                </View>
+            </TouchableOpacity>
+        </ScrollView>
       </View>
+      <View style={styles.menu}>
+            <View style={{flex: 1, flexDirection: 'row'}}>
+                <TouchableOpacity>
+                    <Image style={styles.iconsMenu} source={ require('../.././assets/guides.png') } />
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress = {
+                    () => navigation.navigate('Condoms')
+                }>
+                    <Image style={styles.iconsMenu} source={ require('../.././assets/preser.png') } />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Image style={styles.iconsMenu} source={ require('../.././assets/home.png') } />
+                </TouchableOpacity>
+                <TouchableOpacity
+                onPress = {
+                    () => navigation.navigate('Experts')
+                }>
+                <Image style={styles.iconsMenu} source={ require('../.././assets/questions.png') } />
+                    </TouchableOpacity>
+                <TouchableOpacity>
+                    <Image style={styles.iconsMenu} source={ require('../.././assets/profile.png') } />
+                </TouchableOpacity>
+            </View>
+        </View>
     </>
   );
 }
@@ -58,7 +83,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width : '100%',
-    height : '100%',
+    height : '50%',
     marginTop: -30,
     padding: 30,
     borderRadius : 15,
@@ -112,4 +137,19 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     marginLeft: 15
   },
+
+  menu: {
+    width: '100%',
+    height: '10%',
+    marginTop: 10
+  },
+
+  iconsMenu: {
+    marginTop: 10,
+    width : '50%',
+    height : '50%',
+    resizeMode: 'contain',
+    padding: 18,
+    marginLeft: 35
+  }
 });
