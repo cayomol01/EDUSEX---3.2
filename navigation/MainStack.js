@@ -12,6 +12,7 @@ import Screen7 from '../components/condoms/Screen7.js';
 import Screen8 from '../components/condoms/Screen8.js';
 import Screen9 from '../components/condoms/Screen9.js';
 import Screen10 from '../components/condoms/Screen10.js';
+import Experts from '../components/experts/Experts.js';
 
 const Stack = createNativeStackNavigator()
 
@@ -21,6 +22,12 @@ const MainStack = () => {
         <Stack.Navigator
             // screenOptions={{headerShown: false}}    
         >
+
+            <Stack.Screen
+                name = "Experts"
+                component = {Experts}
+            />
+
             <Stack.Screen
                 name = "Condoms"
                 component = {Condoms}
