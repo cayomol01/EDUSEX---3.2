@@ -34,7 +34,7 @@ const Experts = ( {navigation} ) => {
                 <View style={{ flex : 1, justifyContent : 'center', padding : 15 }}>
                     <TouchableOpacity 
                         onPress = {
-                        () => navigation.navigate('Screen1')
+                        () => navigation.navigate('ScreenExp1')
                     }>
                         <View style={styles.containerCards}>
                             <Image style={styles.imageProfile} source={ require('../.././assets/fakeprofile.png') } />
