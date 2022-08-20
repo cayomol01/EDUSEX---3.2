@@ -91,7 +91,10 @@ const Experts = ( {navigation} ) => {
                 }>
                 <Image style={styles.iconsMenu} source={ require('../.././assets/questions.png') } />
                     </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity
+                  onPress = {
+                  () => navigation.navigate('Users')
+                }>
                     <Image style={styles.iconsMenu} source={ require('../.././assets/profile.png') } />
                 </TouchableOpacity>
             </View>

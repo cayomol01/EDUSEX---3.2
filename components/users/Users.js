@@ -1,44 +1,53 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native';
-import { AirbnbRating } from 'react-native-ratings';
 
 const ScreenExp1 = ( {navigation} ) => {
   return (
     <>
-      <View style={styles.containerDr}>
-        <Image style={styles.imageProfileDr} source={ require('../.././assets/fakeprofile.png') } />
+    <View style={styles.containerFondoP}>
+      <Image style={styles.imageProfile} source={ require('../.././assets/fondoProfile.png') } />
+    </View>
+      <View style={styles.containerP}>
+        <Image style={styles.imageP} source={ require('../.././assets/femaleP.png') } />
       </View>
-      <View style={styles.containerDr2}>
-        <Text style={styles.textTittleDr}>Dr. Orellana</Text>
+      <View style={styles.containerP2}>
+        <Text style={styles.textTittleDr}>Tu Perfil 🌸</Text>
       </View>
-      <View style={styles.containerPoints}>
-        <ScrollView style={styles.viewContainerPoints}>
-          <View style={{ justifyContent: 'center', alignItems: 'center', marginBottom: -20}}>
-            <AirbnbRating
-              count={5}
-              reviews={[
-                'Terrible',
-                'Malo',
-                'Okay',
-                'Bueno',
-                'Excelente',
-              ]}
-              defaultRating={3}
-              size={15}
-            />
-          </View>
-        </ScrollView>
-      </View>
-      <View style={styles.containerDr3}>
+      <View style={styles.containerP3}>
         <ScrollView style={styles.scrollView}>
-            <Text>El Dr. Orellana es un ginecólogo altamente cualificado y con experiencia que ofrece un trato totalmente personalizado y de calidad a sus pacientes.</Text>
-            <Text>{"\n\n"}Teléfono: ####-####{"\n\n"}Correo electrónico: ---@gmail.com{"\n\n"}Dirección{"\n\n"}6a. Ave. 6-63 zona 10 Edificio Sixtino 1, Nivel 10, Oficina 1004{"\n\n"}(Parqueo adentro del Edificio Sixtino 1)</Text>
+            <TouchableOpacity 
+                onPress = {
+                () => navigation.navigate('Experts')
+            }>
+                <View style={styles.containerU}>
+                    <Text style={styles.detailsQ}>Realiza tus preguntas :)</Text>
+                    <Image style={styles.imageQ} source={ require('../.././assets/next.png') } />
+                </View>
+            </TouchableOpacity>
             <TouchableOpacity 
                 onPress = {
                 () => navigation.navigate('Screen1')
             }>
-                <View style={styles.containerQ}>
-                    <Text style={styles.detailsQ}>Realiza tus preguntas :)</Text>
+                <View style={styles.containerU}>
+                    <Text style={styles.detailsQ1}>Guardado :)</Text>
+                    <Image style={styles.imageQ} source={ require('../.././assets/next.png') } />
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity 
+                onPress = {
+                () => navigation.navigate('Screen1')
+            }>
+                <View style={styles.containerU}>
+                    <Text style={styles.detailsQ2}>Invita a un amigo :)</Text>
+                    <Image style={styles.imageQ} source={ require('../.././assets/next.png') } />
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity 
+                onPress = {
+                () => navigation.navigate('Screen1')
+            }>
+                <View style={styles.containerU}>
+                    <Text style={styles.detailsQ3}>Ayuda :)</Text>
                     <Image style={styles.imageQ} source={ require('../.././assets/next.png') } />
                 </View>
             </TouchableOpacity>
@@ -55,10 +64,7 @@ const ScreenExp1 = ( {navigation} ) => {
                 }>
                     <Image style={styles.iconsMenu} source={ require('../.././assets/preser.png') } />
                 </TouchableOpacity>
-                <TouchableOpacity
-                onPress = {
-                  () => navigation.navigate('Rating')
-                }>
+                <TouchableOpacity>
                     <Image style={styles.iconsMenu} source={ require('../.././assets/home.png') } />
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -82,17 +88,19 @@ const ScreenExp1 = ( {navigation} ) => {
 export default ScreenExp1
 
 const styles = StyleSheet.create({
-  containerDr: {
+  containerP: {
     alignItems: 'center',
     justifyContent: 'center',
-    width : '100%',
-    height : 290,
-    marginTop: -30,
+    width : '80%',
+    height : 150,
+    marginTop: -130,
+    marginLeft: 40,
+    marginRight: 50,
     borderRadius : 15,
     backgroundColor : '#ffff'
   },
 
-  containerDr2: {
+  containerP2: {
     alignItems: 'center',
     justifyContent: 'center',
     width : '100%',
@@ -104,11 +112,11 @@ const styles = StyleSheet.create({
     overflow : 'hidden'
   },
 
-  containerDr3: {
+  containerP3: {
     alignItems: 'center',
     justifyContent: 'center',
     width : '100%',
-    height : '37.5%',
+    height : '50%',
     marginTop: -30,
     padding: 30,
     borderRadius : 15,
@@ -124,19 +132,18 @@ const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: 'transparent',
     marginHorizontal: 20,
-    paddingTop: 10,
-    marginTop: -40
+    paddingTop: 10
   },
 
-  imageProfileDr : {
+  imageP : {
     width : '50%',
-    height : '100%',
+    height : '50%',
     resizeMode: 'contain',
-    marginLeft: -25,
-    marginTop:30
+    marginLeft: -10,
+    marginTop: -30
   },
 
-  containerQ : {
+  containerU : {
     width: '100%',
     height: '80%',
     borderRadius: 10,
@@ -164,6 +171,30 @@ const styles = StyleSheet.create({
     marginLeft: 15
   },
 
+  detailsQ1: {
+    fontWeight : 'bold',
+    fontSize: 14,
+    marginBottom: 5,
+    marginLeft: 15,
+    marginRight: 80
+  },
+
+  detailsQ2: {
+    fontWeight : 'bold',
+    fontSize: 14,
+    marginBottom: 5,
+    marginLeft: 15,
+    marginRight: 30
+  },
+
+  detailsQ3: {
+    fontWeight : 'bold',
+    fontSize: 14,
+    marginBottom: 5,
+    marginLeft: 15,
+    marginRight: 105
+  },
+
   menu: {
     width: '100%',
     height: '10%',
@@ -179,14 +210,15 @@ const styles = StyleSheet.create({
     marginLeft: 35
   },
 
-  containerPoints: {
+  containerFondoP: {
     width: '100%',
-    height: '15%',
-    backgroundColor: '#fff',
-    marginTop: -30
+    height: '30%',
+    resizeMode:'contain',
+    borderRadius: 15
   },
-  
-  viewContainerPoints: {
-    flex: 1
+
+  imageProfile: {
+    width : '100%',
+    height : '100%',
   }
 });
