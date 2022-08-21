@@ -2,10 +2,12 @@ import * as React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Image, ScrollView, StatusBar } from 'react-native';
 
 
+
 const Genero = ( {navigation} ) => {
     return (
         <>
-        <View style={styles.container3}><Text style={styles.textTittle}>EDUSEX</Text></View>
+        <View style={styles.container1}><Text style={styles.textoTitulo}>EDUSEX</Text>
+        </View>
         <View style={{ flex : 1, justifyContent : 'center', padding : 15 }}>
         <TouchableOpacity 
             onPress = {
@@ -15,9 +17,41 @@ const Genero = ( {navigation} ) => {
               <Image style={styles.imagen} source={ require('../.././assets/Femenino.png' ) } />
 
 
-              <View style={styles.textContainer}>
+              <View style={styles.textdato}>
                 <Text style={styles.text}>
-                  Anillo Vaginal
+                    FEMENINO
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity 
+            onPress = {
+              () => navigation.navigate('nada')
+          }>
+            <View style={styles.container}>
+              <Image style={styles.imagen} source={ require('../.././assets/Masculino.png' ) } />
+
+
+              <View style={styles.textdato}>
+                <Text style={styles.text}>
+                    MASCULINO
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+              
+          <TouchableOpacity 
+            onPress = {
+              () => navigation.navigate('nada')
+          }>
+            <View style={styles.container}>
+              <Image style={styles.imagen} source={ require('../.././assets/Otro.png' ) } />
+
+
+              <View style={styles.textdato}>
+                <Text style={styles.text}>
+                   OTRO
                 </Text>
               </View>
             </View>
@@ -35,13 +69,47 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       width : '100%',
       height : 150,
-      marginBottom : -50,
+      marginBottom : 50,
       borderRadius : 15,
-      backgroundColor : '#FFFFFF',
-      overflow : 'hidden'
+      backgroundColor : '#000000',
+      overflow : 'hidden',
+      
     },
-    textTittle : {
+    textoTitulo : {
         fontWeight : 'bold',
-        fontSize : 40
+        fontSize : 40,
+    
     },
+    imagen : {
+        width : '100%',
+        height : '75%'
+      },
+    
+    imagen1: {
+        width : '10%',
+        height : '25%'
+      },
+
+    textdato : {
+        flex : 1,
+        alignItems : 'center',
+        justifyContent : 'center',
+        color: 'white'
+        
+    },
+    container1: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        width : '100%',
+        height : 200,
+        marginBottom : -50,
+        borderRadius : 15,
+        backgroundColor: 'transparent',
+        overflow : 'hidden'
+      },
+      text : {
+        fontWeight : 'bold',
+        fontSize : 20,
+        color: 'white'
+      },
 });
