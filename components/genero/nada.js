@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
 
-const nada = ( {navigation} ) => {
+
+const Nada = ( {navigation} ) => {
   return (
     <>
       <View style={styles.container}>
@@ -12,4 +13,20 @@ const nada = ( {navigation} ) => {
   )
 }
 
-export default nada
+export default Nada
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width : '100%',
+    height : 150,
+    marginBottom : -50,
+    borderRadius : 15,
+    backgroundColor : '#FFFFFF',
+    overflow : 'hidden'
+  },
+  textTittle : {
+    fontWeight : 'bold',
+    fontSize : 40
+  },
+});

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, TouchableOpacity, Image, ScrollView, StatusBar } from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 
 
 
@@ -7,16 +7,16 @@ const Genero = ( {navigation} ) => {
     return (
         <>
         <TouchableOpacity 
-            onPress = {
-              () => navigation.navigate('nada')
+            onPress = {() => 
+              navigation.navigate('nada')
           }>
             <View style={styles.containerE}>
-              <Image style={styles.imagenE} source={ require('../.././assets/Expert.png' ) } />
+              <Image style={styles.imagenE} source={ require('../.././assets/lE.png' ) } />
 
 
               <View style={styles.textdatoE}>
                 <Text style={styles.textE}>
-                    FEMENINO
+                    Experto
                 </Text>
               </View>
             </View>
@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
       
     },
     textoTitulo : {
+        marginTop:-50,
         fontWeight : 'bold',
         fontSize : 40,
     
@@ -129,18 +130,21 @@ const styles = StyleSheet.create({
         color: 'white'
       },
       containerE: {
-        marginLeft: 350,
-        paddingTop:10,
-        width : '100%',
-        height : 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 330,
+        marginTop:10,
+        paddingTop:5,
+        width : '15%',
+        height : 35,
         borderRadius : 15,
-        backgroundColor : 'White',
+        backgroundColor : '#000000',
         overflow : 'hidden',
         
       },
       imagenE: {
-        width : 30,
-        height : 20
+        width : "100%",
+        height :"43%"
       },
       textdatoE: {
         flex : 1,
@@ -150,8 +154,8 @@ const styles = StyleSheet.create({
       },
       textE: {
         fontWeight : 'bold',
-        fontSize : 12,
-        color: 'black'
+        fontSize : 10,
+        color: 'white'
       },
 
         
