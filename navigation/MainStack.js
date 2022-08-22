@@ -29,13 +29,13 @@ const MainStack = () => {
             // screenOptions={{headerShown: false}}
         >
 
-            <Stack.Screen name="Questions" component={Questions} />
+
 
 
             <Stack.Screen
                 name = "Genero"
                 component = {Genero}
-            />    
+            />
              <Stack.Screen
                 name = "MenuP"
                 component = {MenuP}
@@ -44,6 +44,8 @@ const MainStack = () => {
                 name = "Experts"
                 component = {Experts}
             />
+
+            <Stack.Screen name="Questions" component={Questions} />
 
             <Stack.Screen
                 name = "Condoms"
@@ -66,7 +68,7 @@ const MainStack = () => {
                 name = "Screen4"
                 component = {Screen4}
             />
-    
+
             <Stack.Screen
                 name = "Screen5"
                 component = {Screen5}

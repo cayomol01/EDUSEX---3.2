@@ -9,7 +9,7 @@ const MenuP = ( {navigation} ) => {
         </View>
         <View style={{ flex : 1, justifyContent : 'center', padding : 15, backgroundColor:'#c2dfe3', width: "95%",marginLeft:10, borderRadius:15, marginTop:-30,height: "80%" }}>
 
-        <TouchableOpacity 
+        <TouchableOpacity
             onPress = {
               () => navigation.navigate('MenuP')
           }>
@@ -25,7 +25,7 @@ const MenuP = ( {navigation} ) => {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity 
+          <TouchableOpacity
             onPress = {
               () => navigation.navigate('Condoms')
           }>
@@ -40,10 +40,10 @@ const MenuP = ( {navigation} ) => {
               </View>
             </View>
           </TouchableOpacity>
-              
-          <TouchableOpacity 
+
+          <TouchableOpacity
             onPress = {
-              () => navigation.navigate('MenuP')
+             () => navigation.navigate('Questions')
           }>
             <View style={styles.container}>
               <Image style={styles.imagen} source={ require('../.././assets/infp.png' ) } />
@@ -56,7 +56,7 @@ const MenuP = ( {navigation} ) => {
               </View>
             </View>
           </TouchableOpacity>
-              
+
         </View>
 
         </>
@@ -75,20 +75,20 @@ const styles = StyleSheet.create({
       borderRadius : 15,
       backgroundColor : '#FFFFFF',
       overflow : 'hidden',
-      
+
     },
     textoTitulo : {
         marginTop:-50,
         fontWeight : 'bold',
         fontSize : 40,
-    
+
     },
     imagen : {
         marginTop: 10,
         width : '100%',
         height : '55%'
       },
-    
+
     imagen1: {
         width : '10%',
         height : '25%'
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         alignItems : 'center',
         justifyContent : 'center',
         color: 'white'
-        
+
     },
     container1: {
         alignItems: 'center',
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
         borderRadius : 15,
         backgroundColor : '#000000',
         overflow : 'hidden',
-        
+
       },
       imagenE: {
         width : "100%",
@@ -145,5 +145,5 @@ const styles = StyleSheet.create({
         color: 'black'
       },
 
-        
+
 });
