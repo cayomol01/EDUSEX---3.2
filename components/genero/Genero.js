@@ -6,8 +6,8 @@ import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 const Genero = ( {navigation} ) => {
     return (
         <>
-        <TouchableOpacity 
-            onPress = {() => 
+        <TouchableOpacity
+            onPress = {() =>
               navigation.navigate('nada')
           }>
             <View style={styles.containerE}>
@@ -25,7 +25,7 @@ const Genero = ( {navigation} ) => {
         </View>
         <View style={{ flex : 1, justifyContent : 'center', padding : 15 }}>
 
-        <TouchableOpacity 
+        <TouchableOpacity
             onPress = {
               () => navigation.navigate('MenuP')
           }>
@@ -41,7 +41,7 @@ const Genero = ( {navigation} ) => {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity 
+          <TouchableOpacity
             onPress = {
               () => navigation.navigate('MenuP')
           }>
@@ -56,8 +56,8 @@ const Genero = ( {navigation} ) => {
               </View>
             </View>
           </TouchableOpacity>
-              
-          <TouchableOpacity 
+
+          <TouchableOpacity
             onPress = {
               () => navigation.navigate('MenuP')
           }>
@@ -72,7 +72,7 @@ const Genero = ( {navigation} ) => {
               </View>
             </View>
           </TouchableOpacity>
-              
+
         </View>
 
         </>
@@ -89,19 +89,19 @@ const styles = StyleSheet.create({
       borderRadius : 15,
       backgroundColor : '#000000',
       overflow : 'hidden',
-      
+
     },
     textoTitulo : {
         marginTop:-50,
         fontWeight : 'bold',
         fontSize : 40,
-    
+
     },
     imagenMenu: {
         width : '100%',
         height : '75%'
       },
-    
+
     imagen1Menu:{
         width : '10%',
         height : '25%'
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
         alignItems : 'center',
         justifyContent : 'center',
         color: 'white'
-        
+
     },
     container1Menu: {
         alignItems: 'center',
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
         borderRadius : 15,
         backgroundColor : '#000000',
         overflow : 'hidden',
-        
+
       },
       imagenE:{
         width : "100%",
@@ -157,12 +157,7 @@ const styles = StyleSheet.create({
         fontSize : 20,
         color: 'white'
       },
-      textdatoMenu: {
-        flex : 1,
-        alignItems : 'center',
-        justifyContent : 'center',
-        color: 'white'
-      },
 
-        
+
+
 });

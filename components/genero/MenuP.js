@@ -11,7 +11,7 @@ const MenuP = ( {navigation} ) => {
 
         <TouchableOpacity
             onPress = {
-              () => navigation.navigate('MenuP')
+              () => navigation.navigate('Guias')
           }>
             <View style={styles.container}>
               <Image style={styles.imagen} source={ require('../.././assets/guias.png' ) } />

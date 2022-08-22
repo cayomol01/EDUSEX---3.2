@@ -21,8 +21,8 @@ import Users from '../components/users/Users.js';
 import Questions from "../components/questions/Questions";
 import Guia1 from '../components/ScreenGuias/Guia1';
 import Guias from '../components/Guias';
-import Preguntas1 from '../components/ScreenGuias/Preguntas1'
-import Calification from '../components/ScreenGuias/Calificacion'
+import Preguntas1 from '../components/ScreenGuias/Preguntas1';
+import Calification from '../components/ScreenGuias/Calificacion';
 
 
 
@@ -34,10 +34,6 @@ const MainStack = () => {
         <Stack.Navigator
             // screenOptions={{headerShown: false}}
         >
-
-
-
-
             <Stack.Screen
                 name = "Genero"
                 component = {Genero}
@@ -56,7 +52,7 @@ const MainStack = () => {
             <Stack.Screen
                 name="Guias"
                 component={Guias}
-            ></Stack.Screen>
+            />
 
 
             <Stack.Screen
@@ -136,8 +132,6 @@ const MainStack = () => {
   );
 };
 
-<<<<<<< HEAD
+
 export default MainStack;
-=======
-export default MainStack;
->>>>>>> origin/CAYO-GUIAS
+
