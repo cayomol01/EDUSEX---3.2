@@ -8,7 +8,7 @@ const Genero = ( {navigation} ) => {
         <>
         <TouchableOpacity 
             onPress = {() => 
-              navigation.navigate('nada')
+              navigation.navigate('Login')
           }>
             <View style={styles.containerE}>
               <Image style={styles.imagenE} source={ require('../.././assets/lE.png' ) } />
