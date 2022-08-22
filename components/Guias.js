@@ -45,6 +45,7 @@ const Guias = ({navigation}) => {
         
     <TouchableOpacity
         style = {styles.button}
+        activeOpacity ={0.6}
         onPress={() => navigation.navigate(ruta)}
     >
     <View style={stylesprueba.textContainer}>
@@ -111,7 +112,7 @@ const styles = StyleSheet.create({
     },
     button: {
       alignItems: "center",
-      backgroundColor: "#DDDDDD",
+      backgroundColor: "#dd7973",
       padding: 20,
       paddingRight: 16,
       paddingLeft: 16,

@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Screen1 from '../components/ScreenGuias/Guia1';
+import Guia1 from '../components/ScreenGuias/Guia1';
 import Guias from '../components/Guias';
+import Preguntas1 from '../components/ScreenGuias/Preguntas1'
+import Calification from '../components/ScreenGuias/Calificacion'
 
 
 
@@ -22,8 +24,17 @@ const MainStack = () => {
         
             <Stack.Screen
                 name = 'Guia 1'
-                component = {Screen1}
-            />    
+                component = {Guia1}
+            />
+
+            <Stack.Screen
+                name = "Preguntas 1"
+                component = {Preguntas1}
+            /> 
+            <Stack.Screen
+            name = "Calificacion"
+            component = {Calification}
+        />
         </Stack.Navigator>
     </NavigationContainer>
   );
