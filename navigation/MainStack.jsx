@@ -23,6 +23,8 @@ import Guia1 from '../components/ScreenGuias/Guia1';
 import Guias from '../components/Guias';
 import Preguntas1 from '../components/ScreenGuias/Preguntas1';
 import Calification from '../components/ScreenGuias/Calificacion';
+import Expertos from '../components/expertos/Expertos';
+import Login from '../components/expertos/Login';
 
 const Stack = createNativeStackNavigator();
 
@@ -41,6 +43,16 @@ function MainStack() {
         <Stack.Screen
           name="Experts"
           component={Experts}
+        />
+
+        <Stack.Screen
+          name="Expertos"
+          component={Expertos}
+        />
+
+        <Stack.Screen
+          name="Login"
+          component={Login}
         />
 
         <Stack.Screen name="Questions" component={Questions} />
