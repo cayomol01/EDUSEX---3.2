@@ -21,7 +21,7 @@ const Genero = ( {navigation} ) => {
               </View>
             </View>
           </TouchableOpacity>
-        <View style={styles.container1}><Text style={styles.textoTitulo}>EDUSEX</Text>
+        <View style={styles.container1Menu}><Text style={styles.textoTitulo}>EDUSEX</Text>
         </View>
         <View style={{ flex : 1, justifyContent : 'center', padding : 15 }}>
 
@@ -29,12 +29,12 @@ const Genero = ( {navigation} ) => {
             onPress = {
               () => navigation.navigate('MenuP')
           }>
-            <View style={styles.container}>
-              <Image style={styles.imagen} source={ require('../.././assets/Femenino.png' ) } />
+            <View style={styles.containerMenu}>
+              <Image style={styles.imagenMenu} source={ require('../.././assets/Femenino.png' ) } />
 
 
-              <View style={styles.textdato}>
-                <Text style={styles.text}>
+              <View style={styles.textdatoMenu}>
+                <Text style={styles.textMenu}>
                     FEMENINO
                 </Text>
               </View>
@@ -45,12 +45,12 @@ const Genero = ( {navigation} ) => {
             onPress = {
               () => navigation.navigate('MenuP')
           }>
-            <View style={styles.container}>
-              <Image style={styles.imagen} source={ require('../.././assets/Masculino.png' ) } />
+            <View style={styles.containerMenu}>
+              <Image style={styles.imagenMenu} source={ require('../.././assets/Masculino.png' ) } />
 
 
-              <View style={styles.textdato}>
-                <Text style={styles.text}>
+              <View style={styles.textdatoMenu}>
+                <Text style={styles.textMenu}>
                     MASCULINO
                 </Text>
               </View>
@@ -61,12 +61,12 @@ const Genero = ( {navigation} ) => {
             onPress = {
               () => navigation.navigate('MenuP')
           }>
-            <View style={styles.container}>
-              <Image style={styles.imagen} source={ require('../.././assets/Otro.png' ) } />
+            <View style={styles.containerMenu}>
+              <Image style={styles.imagenMenu} source={ require('../.././assets/Otro.png' ) } />
 
 
-              <View style={styles.textdato}>
-                <Text style={styles.text}>
+              <View style={styles.textdatoMenu}>
+                <Text style={styles.textMenu}>
                    OTRO
                 </Text>
               </View>
@@ -80,7 +80,7 @@ const Genero = ( {navigation} ) => {
 }
 export default Genero
 const styles = StyleSheet.create({
-    container: {
+    containerMenu: {
       alignItems: 'center',
       justifyContent: 'center',
       width : '100%',
@@ -97,24 +97,24 @@ const styles = StyleSheet.create({
         fontSize : 40,
     
     },
-    imagen : {
+    imagenMenu: {
         width : '100%',
         height : '75%'
       },
     
-    imagen1: {
+    imagen1Menu:{
         width : '10%',
         height : '25%'
       },
 
-    textdato : {
+    textdatoMenu : {
         flex : 1,
         alignItems : 'center',
         justifyContent : 'center',
         color: 'white'
         
     },
-    container1: {
+    container1Menu: {
         alignItems: 'center',
         justifyContent: 'center',
         width : '100%',
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
         overflow : 'hidden',
         
       },
-      imagenE: {
+      imagenE:{
         width : "100%",
         height :"43%"
       },
@@ -152,9 +152,16 @@ const styles = StyleSheet.create({
         fontSize : 10,
         color: 'white'
       },
-      text : {
+      textMenu: {
         fontWeight : 'bold',
-        fontSize : 20
+        fontSize : 20,
+        color: 'white'
+      },
+      textdatoMenu: {
+        flex : 1,
+        alignItems : 'center',
+        justifyContent : 'center',
+        color: 'white'
       },
 
         
