@@ -18,6 +18,7 @@ import Screen10 from '../components/condoms/Screen10.js';
 import Experts from '../components/experts/Experts.js';
 import ScreenExp1 from '../components/experts/ScreenExp1.js';
 import Users from '../components/users/Users.js';
+import Questions from "../components/questions/Questions";
 
 const Stack = createNativeStackNavigator()
 
@@ -25,8 +26,11 @@ const MainStack = () => {
   return (
     <NavigationContainer>
         <Stack.Navigator
-            // screenOptions={{headerShown: false}}    
+            // screenOptions={{headerShown: false}}
         >
+
+            <Stack.Screen name="Questions" component={Questions} />
+
 
             <Stack.Screen
                 name = "Genero"
@@ -83,12 +87,12 @@ const MainStack = () => {
             <Stack.Screen
                 name = "Screen9"
                 component = {Screen9}
-            />  
+            />
 
             <Stack.Screen
                 name = "Screen10"
                 component = {Screen10}
-            />  
+            />
 
             <Stack.Screen
                 name = "ScreenExp1"
@@ -98,7 +102,7 @@ const MainStack = () => {
             <Stack.Screen
                 name = "Users"
                 component = {Users}
-            />    
+            />
         </Stack.Navigator>
     </NavigationContainer>
   );
