@@ -1,163 +1,9 @@
 import * as React from 'react';
 import {
-  Text, View, StyleSheet, Image, ScrollView,
+  Text, View, StyleSheet,
 } from 'react-native';
 import { TouchableOpacity } from 'react-native-web';
-import { useState, useEffect } from 'react';
-
-function Preguntas1({ navigation }) {
-  const respuestas = ['F', 'F', 'F', 'F', 'V'];
-  const [answers, SetAnswers] = useState(['', '', '', '', '']);
-  const [buenas, setBuenas] = useState(0);
-  const [res1, SetAnswer1] = useState('');
-  const [res2, SetAnswer2] = useState('');
-  const [res3, SetAnswer3] = useState('');
-  const [res4, SetAnswer4] = useState('');
-  const [res5, SetAnswer5] = useState('');
-
-  function calificar() {
-    SetAnswers(res1, res2, res3, res4, res5);
-    for (let i = 0; i < respuestas.length; i++) {
-      if (answers[i] === answers[i]) {
-        setBuenas(buenas + 1);
-      }
-    }
-
-    navigation.navigate({
-      name: 'Calificacion',
-      params: { buenas },
-      merge: true,
-    });
-  }
-
-  return (
-    <>
-      <View style={styles.container}>
-        <Text style={styles.textTittle}>Preguntas Consentimiento</Text>
-      </View>
-      <View style={styles.container2}>
-        <Text style={styles.containerText}>
-          1. ¿El consentimiento solo se puede\n  dar a través de una forma? \n verdadero o falso
-        </Text>
-        <View style={styles.contenedorBotones}>
-          <View style={styles.containerButton}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => SetAnswer1('V')}
-            >
-              <Text>Verdadero</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.containerButton}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => SetAnswer1('F')}
-            >
-              <Text>Falso</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-
-        <Text style={styles.containerText}>
-          2. Un condón es una cubierta delgada\n usada en el pene durante \nel coito, verdadero o falso?
-        </Text>
-        <View style={styles.contenedorBotones}>
-          <View style={styles.containerButton}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => SetAnswer2('V')}
-            >
-              <Text>Verdadero</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.containerButton}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => SetAnswer2('F')}
-            >
-              <Text>Falso</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-
-        <Text style={styles.containerText}>
-          3. ¿Se puede aceptar el consentimiento\n de una persona no lo suficientemente consciente? verdadero o falso
-        </Text>
-        <View style={styles.contenedorBotones}>
-          <View style={styles.containerButton}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => SetAnswer3('V')}
-            >
-              <Text>Verdadero</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.containerButton}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => SetAnswer3('F')}
-            >
-              <Text>Falso</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-
-        <Text style={styles.containerText}>
-          4. ¿Aprovecharse de una situación para \n obtener consentimiento es aceptado? verdadero o falso
-        </Text>
-        <View style={styles.contenedorBotones}>
-          <View style={styles.containerButton}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => SetAnswer4('V')}
-            >
-              <Text>Verdadero</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.containerButton}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => SetAnswer4('F')}
-            >
-              <Text>Falso</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-
-        <Text style={styles.containerText}>
-          5. ¿El consentimiento se puede \nretirar en cualquier momento? \nverdadero o falso
-        </Text>
-        <View style={styles.contenedorBotones}>
-          <View style={styles.containerButton}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => SetAnswer5('V')}
-            >
-              <Text>Verdadero</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.containerButton}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => SetAnswer5('F')}
-            >
-              <Text>Falso</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={calificar}
-        >
-          <Text style={styles.buttonText}>Calificar</Text>
-        </TouchableOpacity>
-      </View>
-    </>
-  );
-}
-
-export default Preguntas1;
+import { useState } from 'react';
 
 const styles = StyleSheet.create({
   container: {
@@ -218,3 +64,161 @@ const styles = StyleSheet.create({
     fontSize: 40,
   },
 });
+
+function Preguntas1({ navigation }) {
+  const respuestas = ['F', 'F', 'F', 'F', 'V'];
+  const [answers, SetAnswers] = useState(['', '', '', '', '']);
+  const [buenas, setBuenas] = useState(0);
+  const [res1, SetAnswer1] = useState('');
+  const [res2, SetAnswer2] = useState('');
+  const [res3, SetAnswer3] = useState('');
+  const [res4, SetAnswer4] = useState('');
+  const [res5, SetAnswer5] = useState('');
+
+  function calificar() {
+    SetAnswers(res1, res2, res3, res4, res5);
+    for (let i = 0; i < respuestas.length; i += 1) {
+      if (answers[i] === respuestas[i]) {
+        setBuenas(buenas + 1);
+      }
+    }
+
+    navigation.navigate({
+      name: 'Calificacion',
+      params: { buenas },
+      merge: true,
+    });
+  }
+
+  return (
+    <>
+      <View style={styles.container}>
+        <Text style={styles.textTittle}>Preguntas Consentimiento</Text>
+      </View>
+      <View style={styles.container2}>
+        <Text style={styles.containerText}>
+          1. ¿El consentimiento solo se puede\n  dar a través de una forma? \n verdadero o falso
+        </Text>
+        <View style={styles.contenedorBotones}>
+          <View style={styles.containerButton}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => SetAnswer1('V')}
+            >
+              <Text>Verdadero</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.containerButton}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => SetAnswer1('F')}
+            >
+              <Text>Falso</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <Text style={styles.containerText}>
+          2. Un condón es una cubierta delgada\n usada
+          en el pene durante \nel coito, verdadero o falso?
+        </Text>
+        <View style={styles.contenedorBotones}>
+          <View style={styles.containerButton}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => SetAnswer2('V')}
+            >
+              <Text>Verdadero</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.containerButton}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => SetAnswer2('F')}
+            >
+              <Text>Falso</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <Text style={styles.containerText}>
+          3. ¿Se puede aceptar el consentimiento\n de
+          una persona no lo suficientemente consciente? verdadero o falso
+        </Text>
+        <View style={styles.contenedorBotones}>
+          <View style={styles.containerButton}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => SetAnswer3('V')}
+            >
+              <Text>Verdadero</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.containerButton}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => SetAnswer3('F')}
+            >
+              <Text>Falso</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <Text style={styles.containerText}>
+          4. ¿Aprovecharse de una situación para \n
+          obtener consentimiento es aceptado? verdadero o falso
+        </Text>
+        <View style={styles.contenedorBotones}>
+          <View style={styles.containerButton}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => SetAnswer4('V')}
+            >
+              <Text>Verdadero</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.containerButton}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => SetAnswer4('F')}
+            >
+              <Text>Falso</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <Text style={styles.containerText}>
+          5. ¿El consentimiento se puede \nretirar en cualquier momento? \nverdadero o falso
+        </Text>
+        <View style={styles.contenedorBotones}>
+          <View style={styles.containerButton}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => SetAnswer5('V')}
+            >
+              <Text>Verdadero</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.containerButton}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => SetAnswer5('F')}
+            >
+              <Text>Falso</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <TouchableOpacity
+          style={styles.button}
+          // eslint-disable-next-line react/jsx-no-bind
+          onPress={calificar}
+        >
+          <Text style={styles.buttonText}>Calificar</Text>
+        </TouchableOpacity>
+      </View>
+    </>
+  );
+}
+
+export default Preguntas1;

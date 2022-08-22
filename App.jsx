@@ -1,6 +1,5 @@
-import { StyleSheet } from 'react-native';
-import MainStack from './navigation/MainStack.js';
-
+import React from 'react';
+import MainStack from './navigation/MainStack';
 
 export default function App() {
   return (
@@ -10,15 +9,6 @@ export default function App() {
     //     <StatusBar style="auto" />
     //   </SafeAreaView>
     // </SafeAreaProvider>
-    <MainStack></MainStack>
+    <MainStack />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

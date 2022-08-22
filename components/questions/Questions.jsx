@@ -1,22 +1,53 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable guard-for-in */
+/* eslint-disable no-shadow */
+/* eslint-disable react/jsx-no-bind */
 import * as React from 'react';
 import {
   Text,
   View,
   StyleSheet,
-  TouchableOpacity,
-  Image,
-  ScrollView,
-  StatusBar,
   TextInput,
   FlatList,
 } from 'react-native';
-import { useEffect, useState } from 'react';
-import './preg.json';
+import { useState } from 'react';
 
+const questions = require('./preg.json');
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+  },
+  itemStyle: {
+    padding: 10,
+  },
+  textInputStyle: {
+    height: 40,
+    borderWidth: 1,
+    paddingLeft: 20,
+    margin: 5,
+    borderColor: '#009688',
+    backgroundColor: '#FFFFFF',
+  },
+});
+
+function ItemSeparatorView() {
+  return (
+    <View
+      style={{
+        height: 0.5,
+        width: '100%',
+        backgroundColor: '#C8C8C8',
+      }}
+    />
+  );
+}
+
+// eslint-disable-next-line no-unused-vars
 export default function Questions({ navigation }) {
   const [search, setSearch] = useState('');
-  const [filteredDataSource, setFilteredDataSource] = useState(require('./preg.json'));
-  const [masterDataSource, setMasterDataSource] = useState(require('./preg.json'));
+  const [filteredDataSource, setFilteredDataSource] = useState(questions);
+  const [masterDataSource] = useState(questions);
 
   const searchFilterFunction = (text) => {
     // Check if searched text is not blank
@@ -25,30 +56,25 @@ export default function Questions({ navigation }) {
       // Filter the masterDataSource
       // Update FilteredDataSource
       const newData = {};
-      text = text.toUpperCase();
+      const textUpper = text.toUpperCase();
       for (const item in masterDataSource) {
-        console.log(item);
         const itemData = item
           ? item.toUpperCase()
           : ''.toUpperCase();
-        if (itemData.indexOf(text) > -1) {
-          console.log(item.indexOf(text) > -1);
+        if (itemData.indexOf(textUpper) > -1) {
           newData[item] = masterDataSource[item];
-          console.log(newData);
         }
         for (const y in masterDataSource[item].tags) {
           const itemData = masterDataSource[item].tags[y]
             ? item.toUpperCase()
             : ''.toUpperCase();
-          if (itemData.indexOf(text) > -1) {
+          if (itemData.indexOf(textUpper) > -1) {
             newData[item] = masterDataSource[item];
-            console.log(newData);
           }
         }
       }
-      console.log('A', newData);
+
       setFilteredDataSource(newData);
-      console.log('B', filteredDataSource);
       setSearch(text);
     } else {
       // Inserted text is blank
@@ -58,7 +84,13 @@ export default function Questions({ navigation }) {
     }
   };
 
+  // eslint-disable-next-line react/no-unstable-nested-components
   function ItemView({ item }) {
+    const getItem = (title) => {
+      // eslint-disable-next-line no-alert
+      alert(`${title}\n${masterDataSource[title].info}`);
+    };
+
     return (
       <Text
         style={styles.itemStyle}
@@ -68,23 +100,6 @@ export default function Questions({ navigation }) {
       </Text>
     );
   }
-
-  function ItemSeparatorView() {
-    return (
-      <View
-        style={{
-          height: 0.5,
-          width: '100%',
-          backgroundColor: '#C8C8C8',
-        }}
-      />
-    );
-  }
-
-  const getItem = (item) => {
-    // Function for click on an item
-    alert(`${item}\n${masterDataSource[item].info}`);
-  };
 
   return (
     <View style={{ flex: 1 }}>
@@ -106,20 +121,3 @@ export default function Questions({ navigation }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-  },
-  itemStyle: {
-    padding: 10,
-  },
-  textInputStyle: {
-    height: 40,
-    borderWidth: 1,
-    paddingLeft: 20,
-    margin: 5,
-    borderColor: '#009688',
-    backgroundColor: '#FFFFFF',
-  },
-});

@@ -1,73 +1,11 @@
 import * as React from 'react';
 import {
-  Text, View, StyleSheet, TouchableOpacity, Image, ScrollView,
+  Text, View, StyleSheet, TouchableOpacity, Image,
 } from 'react-native';
 
-function MenuP({ navigation }) {
-  return (
-    <>
-      <View style={styles.container1}>
-        <Text style={styles.textoTitulo}>Menu Principal</Text>
-      </View>
-      <View style={{
-        flex: 1, justifyContent: 'center', padding: 15, backgroundColor: '#c2dfe3', width: '95%', marginLeft: 10, borderRadius: 15, marginTop: -30, height: '80%',
-      }}
-      >
-
-        <TouchableOpacity
-          onPress={
-              () => navigation.navigate('Guias')
-          }
-        >
-          <View style={styles.container}>
-            <Image style={styles.imagen} source={require('../../assets/guias.png')} />
-
-            <View style={styles.textdato}>
-              <Text style={styles.text}>
-                GUIAS
-                </Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={
-              () => navigation.navigate('Condoms')
-          }
-        >
-          <View style={styles.container}>
-            <Image style={styles.imagen} source={require('../../assets/Preservativos.png')} />
-
-            <View style={styles.textdato}>
-              <Text style={styles.text}>
-                PRESERVATIVOS
-                </Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={
-             () => navigation.navigate('Questions')
-          }
-        >
-          <View style={styles.container}>
-            <Image style={styles.imagen} source={require('../../assets/infp.png')} />
-
-            <View style={styles.textdato}>
-              <Text style={styles.text}>
-                PREGUNTAS
-                </Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-
-      </View>
-
-    </>
-  );
-}
-export default MenuP;
+const guiasImg = require('../../assets/guias.png');
+const preservativosIMG = require('../../assets/Preservativos.png');
+const infoIMG = require('../../assets/infp.png');
 
 const styles = StyleSheet.create({
   container: {
@@ -151,3 +89,69 @@ const styles = StyleSheet.create({
   },
 
 });
+
+function MenuP({ navigation }) {
+  return (
+    <>
+      <View style={styles.container1}>
+        <Text style={styles.textoTitulo}>Menu Principal</Text>
+      </View>
+      <View style={{
+        flex: 1, justifyContent: 'center', padding: 15, backgroundColor: '#c2dfe3', width: '95%', marginLeft: 10, borderRadius: 15, marginTop: -30, height: '80%',
+      }}
+      >
+
+        <TouchableOpacity
+          onPress={
+              () => navigation.navigate('Guias')
+          }
+        >
+          <View style={styles.container}>
+            <Image style={styles.imagen} source={guiasImg} />
+
+            <View style={styles.textdato}>
+              <Text style={styles.text}>
+                GUIAS
+              </Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={
+              () => navigation.navigate('Condoms')
+          }
+        >
+          <View style={styles.container}>
+            <Image style={styles.imagen} source={preservativosIMG} />
+
+            <View style={styles.textdato}>
+              <Text style={styles.text}>
+                PRESERVATIVOS
+              </Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={
+             () => navigation.navigate('Questions')
+          }
+        >
+          <View style={styles.container}>
+            <Image style={styles.imagen} source={infoIMG} />
+
+            <View style={styles.textdato}>
+              <Text style={styles.text}>
+                PREGUNTAS
+              </Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+
+      </View>
+
+    </>
+  );
+}
+export default MenuP;

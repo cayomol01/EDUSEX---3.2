@@ -19,5 +19,11 @@ module.exports = {
     'react',
   ],
   rules: {
+    'react/prop-types': 0,
+    'react/jsx-no-bind': [2, {
+      ignoreDOMComponents: false,
+      allowArrowFunctions: true,
+    }],
   },
+  ignorePatterns: ['coverage/*', 'node_modules/*', 'dist/*'],
 };

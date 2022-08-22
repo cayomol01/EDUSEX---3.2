@@ -3,81 +3,11 @@ import {
   Text, View, StyleSheet, TouchableOpacity, Image,
 } from 'react-native';
 
-function Genero({ navigation }) {
-  return (
-    <>
-      <TouchableOpacity
-        onPress={() => navigation.navigate('nada')}
-      >
-        <View style={styles.containerE}>
-          <Image style={styles.imagenE} source={require('../../assets/lE.png')} />
+const lEIMG = require('../../assets/lE.png');
+const femeninoIMG = require('../../assets/Femenino.png');
+const masculinoIMG = require('../../assets/Masculino.png');
+const otroIMG = require('../../assets/Otro.png');
 
-          <View style={styles.textdatoE}>
-            <Text style={styles.textE}>
-              Experto
-            </Text>
-          </View>
-        </View>
-      </TouchableOpacity>
-      <View style={styles.container1Menu}>
-        <Text style={styles.textoTitulo}>EDUSEX</Text>
-      </View>
-      <View style={{ flex: 1, justifyContent: 'center', padding: 15 }}>
-
-        <TouchableOpacity
-          onPress={
-              () => navigation.navigate('MenuP')
-          }
-        >
-          <View style={styles.containerMenu}>
-            <Image style={styles.imagenMenu} source={require('../../assets/Femenino.png')} />
-
-            <View style={styles.textdatoMenu}>
-              <Text style={styles.textMenu}>
-                FEMENINO
-                </Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={
-              () => navigation.navigate('MenuP')
-          }
-        >
-          <View style={styles.containerMenu}>
-            <Image style={styles.imagenMenu} source={require('../../assets/Masculino.png')} />
-
-            <View style={styles.textdatoMenu}>
-              <Text style={styles.textMenu}>
-                MASCULINO
-                </Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={
-              () => navigation.navigate('MenuP')
-          }
-        >
-          <View style={styles.containerMenu}>
-            <Image style={styles.imagenMenu} source={require('../../assets/Otro.png')} />
-
-            <View style={styles.textdatoMenu}>
-              <Text style={styles.textMenu}>
-                OTRO
-                </Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-
-      </View>
-
-    </>
-  );
-}
-export default Genero;
 const styles = StyleSheet.create({
   containerMenu: {
     alignItems: 'center',
@@ -158,3 +88,79 @@ const styles = StyleSheet.create({
   },
 
 });
+
+function Genero({ navigation }) {
+  return (
+    <>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('nada')}
+      >
+        <View style={styles.containerE}>
+          <Image style={styles.imagenE} source={lEIMG} />
+
+          <View style={styles.textdatoE}>
+            <Text style={styles.textE}>
+              Experto
+            </Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+      <View style={styles.container1Menu}>
+        <Text style={styles.textoTitulo}>EDUSEX</Text>
+      </View>
+      <View style={{ flex: 1, justifyContent: 'center', padding: 15 }}>
+
+        <TouchableOpacity
+          onPress={
+              () => navigation.navigate('MenuP')
+          }
+        >
+          <View style={styles.containerMenu}>
+            <Image style={styles.imagenMenu} source={femeninoIMG} />
+
+            <View style={styles.textdatoMenu}>
+              <Text style={styles.textMenu}>
+                FEMENINO
+              </Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={
+              () => navigation.navigate('MenuP')
+          }
+        >
+          <View style={styles.containerMenu}>
+            <Image style={styles.imagenMenu} source={masculinoIMG} />
+
+            <View style={styles.textdatoMenu}>
+              <Text style={styles.textMenu}>
+                MASCULINO
+              </Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={
+              () => navigation.navigate('MenuP')
+          }
+        >
+          <View style={styles.containerMenu}>
+            <Image style={styles.imagenMenu} source={otroIMG} />
+
+            <View style={styles.textdatoMenu}>
+              <Text style={styles.textMenu}>
+                OTRO
+              </Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+
+      </View>
+
+    </>
+  );
+}
+export default Genero;

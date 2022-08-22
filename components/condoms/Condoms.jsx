@@ -3,200 +3,21 @@ import {
   Text, View, StyleSheet, TouchableOpacity, Image, ScrollView, StatusBar,
 } from 'react-native';
 
-function Condoms({ navigation }) {
-  return (
-    <>
-      <View style={styles.container3}><Text style={styles.textTittle}>PRESERVATIVOS</Text></View>
-      <ScrollView style={styles.scrollView}>
-        <View style={{ flex: 1, justifyContent: 'center', padding: 15 }}>
-          <TouchableOpacity
-            onPress={
-              () => navigation.navigate('Screen1')
-          }
-          >
-            <View style={styles.container}>
-              <Image style={styles.image} source={require('../../assets/anillo.png')} />
-
-              <View style={styles.textContainer}>
-                <Text style={styles.text}>
-                  Anillo Vaginal
-                </Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-              () => navigation.navigate('Screen2')
-          }
-          >
-            <View style={styles.container}>
-              <Image style={styles.image} source={require('../../assets/capuchon.png')} />
-
-              <View style={styles.textContainer}>
-                <Text style={styles.text}>
-                  Capuchón Cervical
-                </Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-              () => navigation.navigate('Screen3')
-          }
-          >
-            <View style={styles.container}>
-              <Image style={styles.image} source={require('../../assets/cFemenino.png')} />
-
-              <View style={styles.textContainer}>
-                <Text style={styles.text}>
-                  Condón Femenino
-                </Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-              () => navigation.navigate('Screen4')
-          }
-          >
-            <View style={styles.container}>
-              <Image style={styles.image} source={require('../../assets/condon.png')} />
-
-              <View style={styles.textContainer}>
-                <Text style={styles.text}>
-                  Condón Masculino
-                </Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-              () => navigation.navigate('Screen5')
-          }
-          >
-            <View style={styles.container}>
-              <Image style={styles.image} source={require('../../assets/diafragma.png')} />
-
-              <View style={styles.textContainer}>
-                <Text style={styles.text}>
-                  Diafragma
-                </Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-              () => navigation.navigate('Screen6')
-          }
-          >
-            <View style={styles.container}>
-              <Image style={styles.image} source={require('../../assets/espermicida.png')} />
-
-              <View style={styles.textContainer}>
-                <Text style={styles.text}>
-                  Espermicida y Gel
-                </Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-              () => navigation.navigate('Screen7')
-          }
-          >
-            <View style={styles.container}>
-              <Image style={styles.image} source={require('../../assets/esponja.png')} />
-
-              <View style={styles.textContainer}>
-                <Text style={styles.text}>
-                  Esponja Anticonceptiva
-                </Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-              () => navigation.navigate('Screen8')
-          }
-          >
-            <View style={styles.container}>
-              <Image style={styles.image} source={require('../../assets/inyeccion.png')} />
-
-              <View style={styles.textContainer}>
-                <Text style={styles.text}>
-                  Inyección Anticonceptiva
-                </Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-              () => navigation.navigate('Screen9')
-          }
-          >
-            <View style={styles.container}>
-              <Image style={styles.image} source={require('../../assets/parche.png')} />
-
-              <View style={styles.textContainer}>
-                <Text style={styles.text}>
-                  Parche Anticonceptivo
-                </Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-              () => navigation.navigate('Screen10')
-          }
-          >
-            <View style={styles.container}>
-              <Image style={styles.image} source={require('../../assets/pastilla.png')} />
-
-              <View style={styles.textContainer}>
-                <Text style={styles.text}>
-                  Pastilla
-                </Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
-      <View style={styles.menu}>
-        <View style={{ flex: 1, flexDirection: 'row' }}>
-          <TouchableOpacity>
-            <Image style={styles.iconsMenu} source={require('../../assets/guides.png')} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Condoms')
-                }
-          >
-            <Image style={styles.iconsMenu} source={require('../../assets/preser.png')} />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image style={styles.iconsMenu} source={require('../../assets/home.png')} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Experts')
-                }
-          >
-            <Image style={styles.iconsMenu} source={require('../../assets/questions.png')} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                  () => navigation.navigate('Users')
-                }
-          >
-            <Image style={styles.iconsMenu} source={require('../../assets/profile.png')} />
-          </TouchableOpacity>
-        </View>
-      </View>
-    </>
-  );
-}
-
-export default Condoms;
+const anilloIMG = require('../../assets/anillo.png');
+const capuchonIMG = require('../../assets/capuchon.png');
+const cfemeninoIMG = require('../../assets/cFemenino.png');
+const cmasculinoIMG = require('../../assets/condon.png');
+const diafragmaIMG = require('../../assets/diafragma.png');
+const espermicidaIMG = require('../../assets/espermicida.png');
+const esponjaIMG = require('../../assets/esponja.png');
+const inyeccionIMG = require('../../assets/inyeccion.png');
+const parcheIMG = require('../../assets/parche.png');
+const pastillaIMG = require('../../assets/pastilla.png');
+const guidesIMG = require('../../assets/guides.png');
+const preserIMG = require('../../assets/preser.png');
+const homeIMG = require('../../assets/home.png');
+const questionsIMG = require('../../assets/questions.png');
+const profileIMG = require('../../assets/profile.png');
 
 const styles = StyleSheet.create({
   container: {
@@ -266,3 +87,198 @@ const styles = StyleSheet.create({
     marginLeft: 35,
   },
 });
+
+function Condoms({ navigation }) {
+  return (
+    <>
+      <View style={styles.container3}><Text style={styles.textTittle}>PRESERVATIVOS</Text></View>
+      <ScrollView style={styles.scrollView}>
+        <View style={{ flex: 1, justifyContent: 'center', padding: 15 }}>
+          <TouchableOpacity
+            onPress={
+              () => navigation.navigate('Screen1')
+          }
+          >
+            <View style={styles.container}>
+              <Image style={styles.image} source={anilloIMG} />
+
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Anillo Vaginal
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+              () => navigation.navigate('Screen2')
+          }
+          >
+            <View style={styles.container}>
+              <Image style={styles.image} source={capuchonIMG} />
+
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Capuchón Cervical
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+              () => navigation.navigate('Screen3')
+          }
+          >
+            <View style={styles.container}>
+              <Image style={styles.image} source={cfemeninoIMG} />
+
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Condón Femenino
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+              () => navigation.navigate('Screen4')
+          }
+          >
+            <View style={styles.container}>
+              <Image style={styles.image} source={cmasculinoIMG} />
+
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Condón Masculino
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+              () => navigation.navigate('Screen5')
+          }
+          >
+            <View style={styles.container}>
+              <Image style={styles.image} source={diafragmaIMG} />
+
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Diafragma
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+              () => navigation.navigate('Screen6')
+          }
+          >
+            <View style={styles.container}>
+              <Image style={styles.image} source={espermicidaIMG} />
+
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Espermicida y Gel
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+              () => navigation.navigate('Screen7')
+          }
+          >
+            <View style={styles.container}>
+              <Image style={styles.image} source={esponjaIMG} />
+
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Esponja Anticonceptiva
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+              () => navigation.navigate('Screen8')
+          }
+          >
+            <View style={styles.container}>
+              <Image style={styles.image} source={inyeccionIMG} />
+
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Inyección Anticonceptiva
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+              () => navigation.navigate('Screen9')
+          }
+          >
+            <View style={styles.container}>
+              <Image style={styles.image} source={parcheIMG} />
+
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Parche Anticonceptivo
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+              () => navigation.navigate('Screen10')
+          }
+          >
+            <View style={styles.container}>
+              <Image style={styles.image} source={pastillaIMG} />
+
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>
+                  Pastilla
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+      <View style={styles.menu}>
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          <TouchableOpacity>
+            <Image style={styles.iconsMenu} source={guidesIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('Condoms')
+                }
+          >
+            <Image style={styles.iconsMenu} source={preserIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image style={styles.iconsMenu} source={homeIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('Experts')
+                }
+          >
+            <Image style={styles.iconsMenu} source={questionsIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                  () => navigation.navigate('Users')
+                }
+          >
+            <Image style={styles.iconsMenu} source={profileIMG} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </>
+  );
+}
+
+export default Condoms;

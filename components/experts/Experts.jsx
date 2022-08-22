@@ -1,162 +1,16 @@
 import * as React from 'react';
 import {
-  Text, View, StyleSheet, TouchableOpacity, Image, ScrollView, StatusBar,
+  Text, View, StyleSheet, TouchableOpacity, Image, ScrollView,
 } from 'react-native';
 
-function Experts({ navigation }) {
-  return (
-    <>
-      <View style={styles.containerExperts}>
-        <View style={{ flex: 1, flexDirection: 'row' }}>
-          <Image style={styles.imageInfo} source={require('../../assets/edusexInfo.png')} />
-          <Text style={styles.details}>
-            EDUSEX
-            {'\n'}
-            Empieza a consultar
-            {'\n'}
-            con los profesionales
-            {'\n\n'}
-            ¡Contáctalos!
-          </Text>
-        </View>
-      </View>
-      <View style={styles.containerExpertsWel}>
-        <Text style={styles.textWelcome}>Bienvenid@</Text>
-      </View>
-      <View style={styles.containerDiffExperts}>
-        <View style={{ flex: 1, flexDirection: 'row' }}>
-          <TouchableOpacity>
-            <Text style={styles.jobs}>
-              Ginecología
-              {'\n'}
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.jobs}>
-              Urología
-              {'\n'}
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.jobs}>
-              Sexología
-              {'\n'}
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.jobs}>
-              Psicología
-              {'\n'}
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-      <View style={styles.containerJobs}>
-        <ScrollView style={styles.scrollViewJobs}>
-          <View style={{ flex: 1, justifyContent: 'center', padding: 15 }}>
-            <TouchableOpacity
-              onPress={
-                        () => navigation.navigate('ScreenExp1')
-                    }
-            >
-              <View style={styles.containerCards}>
-                <Image style={styles.imageProfile} source={require('../../assets/fakeprofile.png')} />
-                <Text style={styles.detailsInfo}>
-                  Dr. Orellana
-                  {'\n'}
-                  Especialista en: ---
-                  {'\n'}
-                  Agenda tu consulta
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={
-                        () => navigation.navigate('Screen1')
-                    }
-            >
-              <View style={styles.containerCards}>
-                <Image style={styles.imageProfile} source={require('../../assets/fakeprofile2.png')} />
-                <Text style={styles.detailsInfo}>
-                  Dr. Sandoval
-                  {'\n'}
-                  Especialista en: ---
-                  {'\n'}
-                  Agenda tu consulta
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={
-                        () => navigation.navigate('Screen1')
-                    }
-            >
-              <View style={styles.containerCards}>
-                <Image style={styles.imageProfile} source={require('../../assets/fakeprofile.png')} />
-                <Text style={styles.detailsInfo}>
-                  Dr. Orellana
-                  {'\n'}
-                  Especialista en: ---
-                  {'\n'}
-                  Agenda tu consulta
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={
-                        () => navigation.navigate('Screen1')
-                    }
-            >
-              <View style={styles.containerCards}>
-                <Image style={styles.imageProfile} source={require('../../assets/fakeprofile2.png')} />
-                <Text style={styles.detailsInfo}>
-                  Dr. Sandoval
-                  {'\n'}
-                  Especialista en: ---
-                  {'\n'}
-                  Agenda tu consulta
-                </Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
-      </View>
-      <View style={styles.menu}>
-        <View style={{ flex: 1, flexDirection: 'row' }}>
-          <TouchableOpacity>
-            <Image style={styles.iconsMenu} source={require('../../assets/guides.png')} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Condoms')
-                }
-          >
-            <Image style={styles.iconsMenu} source={require('../../assets/preser.png')} />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image style={styles.iconsMenu} source={require('../../assets/home.png')} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Experts')
-                }
-          >
-            <Image style={styles.iconsMenu} source={require('../../assets/questions.png')} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                  () => navigation.navigate('Users')
-                }
-          >
-            <Image style={styles.iconsMenu} source={require('../../assets/profile.png')} />
-          </TouchableOpacity>
-        </View>
-      </View>
-    </>
-  );
-}
-
-export default Experts;
+const fakeprofileIMG = require('../../assets/fakeprofile.png');
+const fakeprofile2IMG = require('../../assets/fakeprofile2.png');
+const guidesIMG = require('../../assets/guides.png');
+const preserIMG = require('../../assets/preser.png');
+const homeIMG = require('../../assets/home.png');
+const questionsIMG = require('../../assets/questions.png');
+const profileIMG = require('../../assets/profile.png');
+const edusexinfoIMG = require('../../assets/edusexInfo.png');
 
 const styles = StyleSheet.create({
   containerExperts: {
@@ -272,3 +126,158 @@ const styles = StyleSheet.create({
     marginLeft: 35,
   },
 });
+
+function Experts({ navigation }) {
+  return (
+    <>
+      <View style={styles.containerExperts}>
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          <Image style={styles.imageInfo} source={edusexinfoIMG} />
+          <Text style={styles.details}>
+            EDUSEX
+            {'\n'}
+            Empieza a consultar
+            {'\n'}
+            con los profesionales
+            {'\n\n'}
+            ¡Contáctalos!
+          </Text>
+        </View>
+      </View>
+      <View style={styles.containerExpertsWel}>
+        <Text style={styles.textWelcome}>Bienvenid@</Text>
+      </View>
+      <View style={styles.containerDiffExperts}>
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          <TouchableOpacity>
+            <Text style={styles.jobs}>
+              Ginecología
+              {'\n'}
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={styles.jobs}>
+              Urología
+              {'\n'}
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={styles.jobs}>
+              Sexología
+              {'\n'}
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={styles.jobs}>
+              Psicología
+              {'\n'}
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <View style={styles.containerJobs}>
+        <ScrollView style={styles.scrollViewJobs}>
+          <View style={{ flex: 1, justifyContent: 'center', padding: 15 }}>
+            <TouchableOpacity
+              onPress={
+                        () => navigation.navigate('ScreenExp1')
+                    }
+            >
+              <View style={styles.containerCards}>
+                <Image style={styles.imageProfile} source={fakeprofileIMG} />
+                <Text style={styles.detailsInfo}>
+                  Dr. Orellana
+                  {'\n'}
+                  Especialista en: ---
+                  {'\n'}
+                  Agenda tu consulta
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={
+                        () => navigation.navigate('Screen1')
+                    }
+            >
+              <View style={styles.containerCards}>
+                <Image style={styles.imageProfile} source={fakeprofile2IMG} />
+                <Text style={styles.detailsInfo}>
+                  Dr. Sandoval
+                  {'\n'}
+                  Especialista en: ---
+                  {'\n'}
+                  Agenda tu consulta
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={
+                        () => navigation.navigate('Screen1')
+                    }
+            >
+              <View style={styles.containerCards}>
+                <Image style={styles.imageProfile} source={fakeprofileIMG} />
+                <Text style={styles.detailsInfo}>
+                  Dr. Orellana
+                  {'\n'}
+                  Especialista en: ---
+                  {'\n'}
+                  Agenda tu consulta
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={
+                        () => navigation.navigate('Screen1')
+                    }
+            >
+              <View style={styles.containerCards}>
+                <Image style={styles.imageProfile} source={fakeprofile2IMG} />
+                <Text style={styles.detailsInfo}>
+                  Dr. Sandoval
+                  {'\n'}
+                  Especialista en: ---
+                  {'\n'}
+                  Agenda tu consulta
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
+      </View>
+      <View style={styles.menu}>
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          <TouchableOpacity>
+            <Image style={styles.iconsMenu} source={guidesIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('Condoms')
+                }
+          >
+            <Image style={styles.iconsMenu} source={preserIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image style={styles.iconsMenu} source={homeIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('Experts')
+                }
+          >
+            <Image style={styles.iconsMenu} source={questionsIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                  () => navigation.navigate('Users')
+                }
+          >
+            <Image style={styles.iconsMenu} source={profileIMG} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </>
+  );
+}
+
+export default Experts;

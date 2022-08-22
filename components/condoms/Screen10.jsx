@@ -3,33 +3,7 @@ import {
   Text, View, StyleSheet, Image, ScrollView,
 } from 'react-native';
 
-function Screen10() {
-  return (
-    <>
-      <View style={styles.container}>
-        <Text style={styles.textTittle}>Pastilla Anticonceptiva</Text>
-      </View>
-      <View style={styles.container2}>
-        <ScrollView style={styles.scrollView}>
-          <Text>
-            Las pastillas anticonceptivas poseen un 99% de efectividad si es que la persona que las consume, las consume de una manera correcta. Al decir de una "manera correcta", se refiere a tomárselas en un horario establecido y sin faltas. Si en dado caso, la persona no las consume de una forma regular, pueden ser 91% efectivas. Estas pastillas contienen hormonas capaces de poder detener el ciclo de ovulación, por lo tanto, el espermatozoide no es capaz de entrar al óvulo.
-            {'\n\n'}
-            Efectos secundarios...
-            {'\n\n'}
-            Náuseas, dolores de cabeza, ciclo menstrual irregular, sensibilidad en glándulas mamarias.
-            {'\n\n'}
-            Es importante recalcar que las pastillas anticonceptivas no previenen enfermedades de transmisión sexual.
-            {'\n\n'}
-            (Planned Parenthood, 2022)
-          </Text>
-          <Image style={styles.image} source={require('../../assets/pastillaUse.png')} />
-        </ScrollView>
-      </View>
-    </>
-  );
-}
-
-export default Screen10;
+const pastillaUseIMG = require('../../assets/inyeccionUse.png');
 
 const styles = StyleSheet.create({
   container: {
@@ -69,3 +43,41 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
 });
+
+function Screen10() {
+  return (
+    <>
+      <View style={styles.container}>
+        <Text style={styles.textTittle}>Pastilla Anticonceptiva</Text>
+      </View>
+      <View style={styles.container2}>
+        <ScrollView style={styles.scrollView}>
+          <Text>
+            Las pastillas anticonceptivas poseen un 99% de
+            efectividad si es que la persona que las consume,
+            las consume de una manera correcta. Al decir de una
+            manera correcta, se refiere a tomárselas en un
+            horario establecido y sin faltas. Si en dado caso,
+            la persona no las consume de una forma regular, pueden
+            ser 91% efectivas. Estas pastillas contienen hormonas
+            capaces de poder detener el ciclo de ovulación, por
+            lo tanto, el espermatozoide no es capaz de entrar al óvulo.
+            {'\n\n'}
+            Efectos secundarios...
+            {'\n\n'}
+            Náuseas, dolores de cabeza, ciclo menstrual irregular,
+            sensibilidad en glándulas mamarias.
+            {'\n\n'}
+            Es importante recalcar que las pastillas anticonceptivas
+            no previenen enfermedades de transmisión sexual.
+            {'\n\n'}
+            (Planned Parenthood, 2022)
+          </Text>
+          <Image style={styles.image} source={pastillaUseIMG} />
+        </ScrollView>
+      </View>
+    </>
+  );
+}
+
+export default Screen10;

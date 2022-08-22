@@ -1,75 +1,9 @@
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import {
   StyleSheet, Text, View, FlatList,
 } from 'react-native';
 import { TouchableOpacity } from 'react-native-web';
-import React, { useState } from 'react';
-
-const Data = [
-  {
-    id: 1,
-    title: 'Guia 1',
-    route: 'Guia 1',
-
-  },
-  {
-    id: 2,
-    title: 'Guia 2',
-    route: 'Guia 2',
-  },
-  {
-    id: 3,
-    title: 'Guia 3',
-    route: 'Guia 3',
-  },
-  {
-    id: 4,
-    title: 'Guia 4',
-    route: 'Guia 4',
-  },
-  {
-    id: 5,
-    title: 'Guia 5',
-    route: 'Guia 5',
-  },
-];
-
-function Guias({ navigation }) {
-  function Item({ title, ruta }) {
-    return (
-      <TouchableOpacity
-        style={styles.button}
-        activeOpacity={0.6}
-        onPress={() => navigation.navigate(ruta)}
-      >
-        <View style={stylesprueba.textContainer}>
-          <Text style={styles.buttonText}>
-            {title}
-          </Text>
-        </View>
-      </TouchableOpacity>
-    );
-  }
-
-  const renderItem = ({ item }) => (
-    <Item title={item.title} ruta={item.route} />
-  );
-
-  return (
-    <>
-      <View style={styles.navTitle}><Text style={styles.navTitle}>Guias</Text></View>
-      <FlatList
-        data={Data}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
-    </>
-
-  );
-}
-
-/* Esto de aca abajo es equivalente al css: */
+import React from 'react';
 
 const styles = StyleSheet.create({
   container: {
@@ -177,5 +111,69 @@ const stylesprueba = StyleSheet.create({
     paddingTop: 10,
   },
 });
+
+const Data = [
+  {
+    id: 1,
+    title: 'Guia 1',
+    route: 'Guia 1',
+
+  },
+  {
+    id: 2,
+    title: 'Guia 2',
+    route: 'Guia 2',
+  },
+  {
+    id: 3,
+    title: 'Guia 3',
+    route: 'Guia 3',
+  },
+  {
+    id: 4,
+    title: 'Guia 4',
+    route: 'Guia 4',
+  },
+  {
+    id: 5,
+    title: 'Guia 5',
+    route: 'Guia 5',
+  },
+];
+
+function Guias({ navigation }) {
+  // eslint-disable-next-line react/no-unstable-nested-components
+  function Item({ title, ruta }) {
+    return (
+      <TouchableOpacity
+        style={styles.button}
+        activeOpacity={0.6}
+        onPress={() => navigation.navigate(ruta)}
+      >
+        <View style={stylesprueba.textContainer}>
+          <Text style={styles.buttonText}>
+            {title}
+          </Text>
+        </View>
+      </TouchableOpacity>
+    );
+  }
+
+  const renderItem = ({ item }) => (
+    <Item title={item.title} ruta={item.route} />
+  );
+
+  return (
+    <>
+      <View style={styles.navTitle}><Text style={styles.navTitle}>Guias</Text></View>
+      <FlatList
+        data={Data}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+      />
+    </>
+
+  );
+}
 
 export default Guias;

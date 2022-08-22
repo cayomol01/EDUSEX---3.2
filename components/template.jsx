@@ -1,14 +1,5 @@
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
-export default function template() {
-  return (
-    <SafeAreaView>
-      <Text>Template</Text>
-    </SafeAreaView>
-  );
-}
 
 /* Esto de aca abajo es equivalente al css: */
 const styles = StyleSheet.create({
@@ -19,3 +10,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default function template() {
+  return (
+    <View style={styles}>
+      <Text>Template</Text>
+    </View>
+  );
+}

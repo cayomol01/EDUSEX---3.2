@@ -3,31 +3,7 @@ import {
   Text, View, StyleSheet, Image, ScrollView,
 } from 'react-native';
 
-function Screen1({ navigation }) {
-  return (
-    <>
-      <View style={styles.container}>
-        <Text style={styles.textTittle}>Anillo Vaginal</Text>
-      </View>
-      <View style={styles.container2}>
-        <ScrollView style={styles.scrollView}>
-          <Text>
-            Los anillos anticonceptivos poseen un 99% de efectividad si es que la persona lo usa de manera correcta. Al decir de una "manera correcta", se refiere a ponerlo de forma correcta en la vagina. Si en dado caso, la persona no lo hace, pueden ser 91% efectivos. El anillo vaginal se puede utilizar 24/7 y este es capaz de liberar hormonas haciendo que la mujer sea incapaz de quedar embarazada.
-            {'\n\n'}
-            Efectos secundarios.
-            {'\n\n'}
-            Náuseas, dolores de cabeza, ciclo menstrual irregular, sensibilidad en las glándulas mamarias.Es importante recalcar que el anillo vaginal no previene enfermedades de transmisión sexual.
-            {'\n\n'}
-            (Planned Parenthood, 2022)
-          </Text>
-          <Image style={styles.image} source={require('../../assets/anilloUse.png')} />
-        </ScrollView>
-      </View>
-    </>
-  );
-}
-
-export default Screen1;
+const anilloUseIMG = require('../../assets/anilloUse.png');
 
 const styles = StyleSheet.create({
   container: {
@@ -67,3 +43,38 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
 });
+
+function Screen1() {
+  return (
+    <>
+      <View style={styles.container}>
+        <Text style={styles.textTittle}>Anillo Vaginal</Text>
+      </View>
+      <View style={styles.container2}>
+        <ScrollView style={styles.scrollView}>
+          <Text>
+            Los anillos anticonceptivos poseen un 99%
+            de efectividad si es que la persona lo usa
+            de manera correcta. Al decir de una manera
+            correcta, se refiere a ponerlo de forma correcta
+            en la vagina. Si en dado caso, la persona no lo hace,
+            pueden ser 91% efectivos. El anillo vaginal se puede
+            utilizar 24/7 y este es capaz de liberar hormonas
+            haciendo que la mujer sea incapaz de quedar embarazada.
+            {'\n\n'}
+            Efectos secundarios.
+            {'\n\n'}
+            Náuseas, dolores de cabeza, ciclo menstrual irregular,
+            sensibilidad en las glándulas mamarias.Es importante
+            recalcar que el anillo vaginal no previene enfermedades de transmisión sexual.
+            {'\n\n'}
+            (Planned Parenthood, 2022)
+          </Text>
+          <Image style={styles.image} source={anilloUseIMG} />
+        </ScrollView>
+      </View>
+    </>
+  );
+}
+
+export default Screen1;
