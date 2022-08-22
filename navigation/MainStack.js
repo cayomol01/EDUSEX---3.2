@@ -2,7 +2,8 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Genero from '../components/genero/Genero.js';
-import Nada from '../components/genero/nada.js';
+import MenuP from '../components/genero/MenuP.js';
+import Condoms from '../components/condoms/Condoms.js'
 const Stack = createNativeStackNavigator()
 
 const MainStack = () => {
@@ -17,8 +18,13 @@ const MainStack = () => {
                 component = {Genero}
             />    
              <Stack.Screen
-                name = "nada"
-                component = {Nada}
+                name = "MenuP"
+                component = {MenuP}
+            />
+
+            <Stack.Screen
+                name = "Condoms"
+                component = {Condoms}
             />
         </Stack.Navigator>
     </NavigationContainer>

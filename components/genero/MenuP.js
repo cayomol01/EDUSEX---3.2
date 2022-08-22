@@ -1,41 +1,25 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
+import { Text, View, StyleSheet,TouchableOpacity, Image, ScrollView} from 'react-native';
 
 
-
-const Genero = ( {navigation} ) => {
-    return (
-        <>
-        <TouchableOpacity 
-            onPress = {() => 
-              navigation.navigate('nada')
-          }>
-            <View style={styles.containerE}>
-              <Image style={styles.imagenE} source={ require('../.././assets/lE.png' ) } />
-
-
-              <View style={styles.textdatoE}>
-                <Text style={styles.textE}>
-                    Experto
-                </Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-        <View style={styles.container1}><Text style={styles.textoTitulo}>EDUSEX</Text>
+const MenuP = ( {navigation} ) => {
+  return (
+    <>
+        <View style={styles.container1}><Text style={styles.textoTitulo}>Menu Principal</Text>
         </View>
-        <View style={{ flex : 1, justifyContent : 'center', padding : 15 }}>
+        <View style={{ flex : 1, justifyContent : 'center', padding : 15, backgroundColor:'#c2dfe3', width: "95%",marginLeft:10, borderRadius:15, marginTop:-30,height: "80%" }}>
 
         <TouchableOpacity 
             onPress = {
               () => navigation.navigate('MenuP')
           }>
             <View style={styles.container}>
-              <Image style={styles.imagen} source={ require('../.././assets/Femenino.png' ) } />
+              <Image style={styles.imagen} source={ require('../.././assets/guias.png' ) } />
 
 
               <View style={styles.textdato}>
                 <Text style={styles.text}>
-                    FEMENINO
+                    GUIAS
                 </Text>
               </View>
             </View>
@@ -43,15 +27,15 @@ const Genero = ( {navigation} ) => {
 
           <TouchableOpacity 
             onPress = {
-              () => navigation.navigate('MenuP')
+              () => navigation.navigate('Condoms')
           }>
             <View style={styles.container}>
-              <Image style={styles.imagen} source={ require('../.././assets/Masculino.png' ) } />
+              <Image style={styles.imagen} source={ require('../.././assets/Preservativos.png' ) } />
 
 
               <View style={styles.textdato}>
                 <Text style={styles.text}>
-                    MASCULINO
+                    PRESERVATIVOS
                 </Text>
               </View>
             </View>
@@ -62,12 +46,12 @@ const Genero = ( {navigation} ) => {
               () => navigation.navigate('MenuP')
           }>
             <View style={styles.container}>
-              <Image style={styles.imagen} source={ require('../.././assets/Otro.png' ) } />
+              <Image style={styles.imagen} source={ require('../.././assets/infp.png' ) } />
 
 
               <View style={styles.textdato}>
                 <Text style={styles.text}>
-                   OTRO
+                   PREGUNTAS
                 </Text>
               </View>
             </View>
@@ -78,16 +62,18 @@ const Genero = ( {navigation} ) => {
         </>
     );
 }
-export default Genero
+export default MenuP
+
 const styles = StyleSheet.create({
     container: {
+      marginLeft: 20,
       alignItems: 'center',
       justifyContent: 'center',
-      width : '100%',
+      width : '90%',
       height : 150,
       marginBottom : 50,
       borderRadius : 15,
-      backgroundColor : '#000000',
+      backgroundColor : '#FFFFFF',
       overflow : 'hidden',
       
     },
@@ -98,8 +84,9 @@ const styles = StyleSheet.create({
     
     },
     imagen : {
+        marginTop: 10,
         width : '100%',
-        height : '75%'
+        height : '55%'
       },
     
     imagen1: {
@@ -154,7 +141,8 @@ const styles = StyleSheet.create({
       },
       text : {
         fontWeight : 'bold',
-        fontSize : 20
+        fontSize : 20,
+        color: 'black'
       },
 
         
