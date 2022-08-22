@@ -1,14 +1,30 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, Image, ScrollView, StatusBar } from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, Image, ScrollView, StatusBar } from 'react-native';
 
 
 
 const Genero = ( {navigation} ) => {
     return (
         <>
+        <TouchableOpacity 
+            onPress = {
+              () => navigation.navigate('nada')
+          }>
+            <View style={styles.containerE}>
+              <Image style={styles.imagenE} source={ require('../.././assets/Expert.png' ) } />
+
+
+              <View style={styles.textdatoE}>
+                <Text style={styles.textE}>
+                    FEMENINO
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
         <View style={styles.container1}><Text style={styles.textoTitulo}>EDUSEX</Text>
         </View>
         <View style={{ flex : 1, justifyContent : 'center', padding : 15 }}>
+
         <TouchableOpacity 
             onPress = {
               () => navigation.navigate('nada')
@@ -112,4 +128,31 @@ const styles = StyleSheet.create({
         fontSize : 20,
         color: 'white'
       },
+      containerE: {
+        marginLeft: 350,
+        paddingTop:10,
+        width : '100%',
+        height : 50,
+        borderRadius : 15,
+        backgroundColor : 'White',
+        overflow : 'hidden',
+        
+      },
+      imagenE: {
+        width : 30,
+        height : 20
+      },
+      textdatoE: {
+        flex : 1,
+        alignItems : 'center',
+        justifyContent : 'center',
+        color: 'white'
+      },
+      textE: {
+        fontWeight : 'bold',
+        fontSize : 12,
+        color: 'black'
+      },
+
+        
 });
