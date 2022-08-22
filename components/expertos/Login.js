@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import {Text, View, StyleSheet, TouchableOpacity, Image, TextInput} from 'react-native';
 
 
-function Login() {
+function Login({navigation}) {
   return (
     <View style ={styles.containerLogin}>
         <Image style={styles.Ilogin} source={ require('../.././assets/princi.png' ) } />
@@ -17,8 +17,7 @@ function Login() {
         </TextInput>
       <StatusBar style='auto '/>
       <TouchableOpacity 
-            onPress = {
-              () => navigation.navigate('Expertos')
+            onPress = {() => navigation.navigate('Expertos')
           }>
               <View style={styles.Button}>
                 <Text style={styles.text}>

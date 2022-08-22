@@ -15,6 +15,7 @@ import Screen8 from '../components/condoms/Screen8.js';
 import Screen9 from '../components/condoms/Screen9.js';
 import Screen10 from '../components/condoms/Screen10.js';
 import Login from '../components/expertos/Login.js';
+import Expertos from '../components/expertos/Expertos.js';
 const Stack = createNativeStackNavigator()
 
 const MainStack = () => {
@@ -85,6 +86,11 @@ const MainStack = () => {
                 name = "Login"
                 component = {Login}
             />  
+            <Stack.Screen
+                name = "Expertos"
+                component = {Expertos}
+            />  
+
 
   
         </Stack.Navigator>

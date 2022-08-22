@@ -7,65 +7,56 @@ const Expertos = ( {navigation} ) => {
         <View style={styles.containerExperts}>
             <View style={{flex: 1, flexDirection: 'row'}}>
             <Image style={styles.imageInfo} source={ require('../.././assets/edusexInfo.png') } />
-                <Text style={styles.details}>EDUSEX{"\n"}Empieza a consultar{"\n"}con los profesionales            {"\n\n"}¡Contáctalos!</Text>
+                <Text style={styles.details}>EDUSEX{"\n"}Empieza a contestar{"\n"}las dudas de los usuarios  {"\n\n"}¡Responde!</Text>
             </View>
         </View>
+
         <View style={styles.containerExpertsWel}>
             <Text style={styles.textWelcome}>Bienvenid@</Text>
         </View>
-        <View style={styles.containerDiffExperts}>
-            <View style={{flex: 1, flexDirection: 'row'}}>
-                <TouchableOpacity>
-                    <Text style={styles.jobs}>Ginecología{"\n"}</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={styles.jobs}>Urología{"\n"}</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={styles.jobs}>Sexología{"\n"}</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={styles.jobs}>Psicología{"\n"}</Text>
-                </TouchableOpacity>
-            </View>
+        <View style={{flex: 1, flexDirection: 'row'}}>
+                
+                <Text style={styles.jobs}>Mensajes{"\n"}</Text>
+                
+                
         </View>
         <View style={styles.containerJobs}>
             <ScrollView style={styles.scrollViewJobs}>
                 <View style={{ flex : 1, justifyContent : 'center', padding : 15 }}>
                     <TouchableOpacity 
                         onPress = {
-                        () => navigation.navigate('ScreenExp1')
+                        () => navigation.navigate('Login')
                     }>
                         <View style={styles.containerCards}>
-                            <Image style={styles.imageProfile} source={ require('../.././assets/fakeprofile.png') } />
-                            <Text style={styles.detailsInfo}>Dr. Orellana{"\n"}Especialista en: ---{"\n"}Agenda tu consulta</Text>
+                            <Image style={styles.imageProfile} source={ require('../.././assets/Person1.png') } />
+                            <Text style={styles.detailsInfo}>@theJPM{"\n"}Duda acerca..: ---{"\n"}Agenda tu consulta</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity 
                         onPress = {
-                        () => navigation.navigate('Screen1')
+                        () => navigation.navigate('Login')
                     }>
                         <View style={styles.containerCards}>
-                            <Image style={styles.imageProfile} source={ require('../.././assets/fakeprofile2.png') } />
-                            <Text style={styles.detailsInfo}>Dr. Sandoval{"\n"}Especialista en: ---{"\n"}Agenda tu consulta</Text>
+                            <Image style={styles.imageProfile} source={ require('../.././assets/perfil2.png') } />
+                            <Text style={styles.detailsInfo}>@prisci08{"\n"}Duda acerca..: ---{"\n"}Agenda tu consulta</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity 
                         onPress = {
-                        () => navigation.navigate('Screen1')
+                        () => navigation.navigate('Login')
                     }>
                         <View style={styles.containerCards}>
-                            <Image style={styles.imageProfile} source={ require('../.././assets/fakeprofile.png') } />
-                            <Text style={styles.detailsInfo}>Dr. Orellana{"\n"}Especialista en: ---{"\n"}Agenda tu consulta</Text>
+                            <Image style={styles.imageProfile} source={ require('../.././assets/Person1.png') } />
+                            <Text style={styles.detailsInfo}>@usdfa{"\n"}Duda acerca..: ---{"\n"}Agenda tu consulta</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity 
                         onPress = {
-                        () => navigation.navigate('Screen1')
+                        () => navigation.navigate('Login')
                     }>
                         <View style={styles.containerCards}>
-                            <Image style={styles.imageProfile} source={ require('../.././assets/fakeprofile2.png') } />
-                            <Text style={styles.detailsInfo}>Dr. Sandoval{"\n"}Especialista en: ---{"\n"}Agenda tu consulta</Text>
+                            <Image style={styles.imageProfile} source={ require('../.././assets/perfil2.png') } />
+                            <Text style={styles.detailsInfo}>@estefelvi{"\n"}Duda acerca..: ---{"\n"}Agenda tu consulta</Text>
                         </View>
                     </TouchableOpacity>
                 </View>   
@@ -73,7 +64,10 @@ const Expertos = ( {navigation} ) => {
         </View>
         <View style={styles.menu}>
             <View style={{flex: 1, flexDirection: 'row'}}>
-                <TouchableOpacity>
+                <TouchableOpacity
+                onPress = {
+                    () => navigation.navigate('Guias')
+                  }>
                     <Image style={styles.iconsMenu} source={ require('../.././assets/guides.png') } />
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -82,19 +76,23 @@ const Expertos = ( {navigation} ) => {
                 }>
                     <Image style={styles.iconsMenu} source={ require('../.././assets/preser.png') } />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity
+                onPress = {
+                    () => navigation.navigate('MenuP')
+                }>
+                        
                     <Image style={styles.iconsMenu} source={ require('../.././assets/home.png') } />
                 </TouchableOpacity>
                 <TouchableOpacity
-                onPress = {
-                    () => navigation.navigate('Experts')
-                }>
+                    onPress = {
+                        () => navigation.navigate('Experts')
+                    }>
                 <Image style={styles.iconsMenu} source={ require('../.././assets/questions.png') } />
                     </TouchableOpacity>
                 <TouchableOpacity
-                  onPress = {
-                  () => navigation.navigate('Users')
-                }>
+                    onPress = {
+                        () => navigation.navigate('Users')
+                    }>
                     <Image style={styles.iconsMenu} source={ require('../.././assets/profile.png') } />
                 </TouchableOpacity>
             </View>
@@ -156,7 +154,7 @@ const styles = StyleSheet.create({
   jobs: {
     marginTop: 0,
     fontWeight : 'bold',
-    fontSize: 14,
+    fontSize: 16,
     padding: 12
   },
 
