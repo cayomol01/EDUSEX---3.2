@@ -19,6 +19,12 @@ import Experts from '../components/experts/Experts.js';
 import ScreenExp1 from '../components/experts/ScreenExp1.js';
 import Users from '../components/users/Users.js';
 import Questions from "../components/questions/Questions";
+import Guia1 from '../components/ScreenGuias/Guia1';
+import Guias from '../components/Guias';
+import Preguntas1 from '../components/ScreenGuias/Preguntas1'
+import Calification from '../components/ScreenGuias/Calificacion'
+
+
 
 const Stack = createNativeStackNavigator()
 
@@ -46,6 +52,26 @@ const MainStack = () => {
             />
 
             <Stack.Screen name="Questions" component={Questions} />
+
+            <Stack.Screen
+                name="Guias"
+                component={Guias}
+            ></Stack.Screen>
+
+
+            <Stack.Screen
+                name = 'Guia 1'
+                component = {Guia1}
+            />
+
+            <Stack.Screen
+                name = "Preguntas 1"
+                component = {Preguntas1}
+            />
+            <Stack.Screen
+                name = "Calificacion"
+                component = {Calification}
+            />
 
             <Stack.Screen
                 name = "Condoms"
@@ -110,4 +136,8 @@ const MainStack = () => {
   );
 };
 
+<<<<<<< HEAD
 export default MainStack;
+=======
+export default MainStack;
+>>>>>>> origin/CAYO-GUIAS
