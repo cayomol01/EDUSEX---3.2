@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Condoms from '../components/condoms/Condoms.js';
+import Genero from '../components/genero/Genero.js';
+import MenuP from '../components/genero/MenuP.js';
+import Condoms from '../components/condoms/Condoms.js'
 import Screen1 from '../components/condoms/Screen1.js';
 import Screen2 from '../components/condoms/Screen2.js';
 import Screen3 from '../components/condoms/Screen3.js';
@@ -12,6 +14,7 @@ import Screen7 from '../components/condoms/Screen7.js';
 import Screen8 from '../components/condoms/Screen8.js';
 import Screen9 from '../components/condoms/Screen9.js';
 import Screen10 from '../components/condoms/Screen10.js';
+
 import Experts from '../components/experts/Experts.js';
 import ScreenExp1 from '../components/experts/ScreenExp1.js';
 import Users from '../components/users/Users.js';
@@ -26,6 +29,14 @@ const MainStack = () => {
         >
 
             <Stack.Screen
+                name = "Genero"
+                component = {Genero}
+            />    
+             <Stack.Screen
+                name = "MenuP"
+                component = {MenuP}
+            />
+             <Stack.Screen
                 name = "Experts"
                 component = {Experts}
             />
@@ -34,12 +45,10 @@ const MainStack = () => {
                 name = "Condoms"
                 component = {Condoms}
             />
-
             <Stack.Screen
                 name = "Screen1"
                 component = {Screen1}
             />
-
             <Stack.Screen
                 name = "Screen2"
                 component = {Screen2}
@@ -49,12 +58,11 @@ const MainStack = () => {
                 name = "Screen3"
                 component = {Screen3}
             />
-
             <Stack.Screen
                 name = "Screen4"
                 component = {Screen4}
             />
-
+    
             <Stack.Screen
                 name = "Screen5"
                 component = {Screen5}
@@ -64,17 +72,14 @@ const MainStack = () => {
                 name = "Screen6"
                 component = {Screen6}
             />
-
             <Stack.Screen
                 name = "Screen7"
                 component = {Screen7}
             />
-
             <Stack.Screen
                 name = "Screen8"
                 component = {Screen8}
             />
-
             <Stack.Screen
                 name = "Screen9"
                 component = {Screen9}

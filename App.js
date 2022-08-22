@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import MainStack from './navigation/MainStack.js';
 
+
 export default function App() {
   return (
     // <SafeAreaProvider>
