@@ -1,11 +1,11 @@
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context"
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function template() {
   return (
     <SafeAreaView>
-        <Text>Template</Text>
+      <Text>Template</Text>
     </SafeAreaView>
   );
 }
