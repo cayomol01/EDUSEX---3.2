@@ -35,7 +35,7 @@ const ScreenExp1 = ( {navigation} ) => {
             <Text>{"\n\n"}Teléfono: ####-####{"\n\n"}Correo electrónico: ---@gmail.com{"\n\n"}Dirección{"\n\n"}6a. Ave. 6-63 zona 10 Edificio Sixtino 1, Nivel 10, Oficina 1004{"\n\n"}(Parqueo adentro del Edificio Sixtino 1)</Text>
             <TouchableOpacity 
                 onPress = {
-                () => navigation.navigate('Screen1')
+                () => navigation.navigate('Login2')
             }>
                 <View style={styles.containerQ}>
                     <Text style={styles.detailsQ}>Realiza tus preguntas :)</Text>
