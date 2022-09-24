@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native'
+import { Text, View, StyleSheet } from 'react-native';
 import { Input, Button } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Login2 = ({navigation}) => {
+
+const Login2 = ( {navigation} ) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    return (
+  return (
+    <>
         <View style={styles.container}>
             <Input
                 placeholder='Enter your email'
@@ -27,8 +27,12 @@ const Login2 = ({navigation}) => {
             <Button title='sign in' style={styles.button} />
             <Button title='register' style={styles.button} />
         </View>
-    )
+    </>
+  );
 }
+
+export default Login2
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -41,5 +45,3 @@ const styles = StyleSheet.create({
         marginTop: 10
     }
 });
-
-export default Login2;

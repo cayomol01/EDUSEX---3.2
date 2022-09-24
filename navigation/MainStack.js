@@ -15,6 +15,7 @@ import Screen10 from '../components/condoms/Screen10.js';
 import Experts from '../components/experts/Experts.js';
 import ScreenExp1 from '../components/experts/ScreenExp1.js';
 import Users from '../components/users/Users.js';
+import Login2 from '../components/chat/Login2.js';
 
 const Stack = createNativeStackNavigator()
 
@@ -93,6 +94,11 @@ const MainStack = () => {
             <Stack.Screen
                 name = "Users"
                 component = {Users}
+            />  
+
+            <Stack.Screen
+                name = "Login2"
+                component = {Login2}
             />    
         </Stack.Navigator>
     </NavigationContainer>
