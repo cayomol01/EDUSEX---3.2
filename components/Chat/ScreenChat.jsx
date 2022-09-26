@@ -1,4 +1,4 @@
-import { View,Text,  StyleSheet} from 'react-native';
+import { View,Text,StyleSheet} from 'react-native';
 import React, { useState, useCallback, useEffect } from 'react'
 import {Bubble, GiftedChat, Send} from 'react-native-gifted-chat';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
