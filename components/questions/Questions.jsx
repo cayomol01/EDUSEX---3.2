@@ -10,7 +10,9 @@ import {
   TextInput,
   FlatList,
   TouchableOpacity,
-  Image
+  Image,
+  Dimensions,
+  SafeAreaView
 } from 'react-native';
 import { useState } from 'react';
 
@@ -26,9 +28,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     height: 670
   },
+
   itemStyle: {
     padding: 10,
   },
+
   textInputStyle: {
     height: 40,
     borderWidth: 1,
@@ -37,6 +41,7 @@ const styles = StyleSheet.create({
     borderColor: '#009688',
     backgroundColor: '#FFFFFF',
   },
+
   menu: {
     width: '100%',
     height: '10%',
@@ -51,6 +56,33 @@ const styles = StyleSheet.create({
     padding: 18,
     marginLeft: 35,
   },
+
+  containerFilter: {
+    flex: 1,
+    paddingHorizontal: 10,
+    justifyContent: 'center'
+  },
+
+  listTab: {
+    flexDirection: 'row',
+    alignSelf: 'center',
+    marginBottom: 20
+  },
+
+  buttonFilter: {
+    width: Dimensions.get('window').width / 3.5,
+    height: 40,
+    flexDirection: 'row',
+    borderWidth: 0.5,
+    padding: 10,
+    justifyContent: 'center',
+    borderColor: '#EBEBEB'
+  },
+
+  btnTabActive: {
+    backgroundColor: '#c2dfe3'
+  },
+
 });
 
 function ItemSeparatorView() {
@@ -70,6 +102,95 @@ export default function Questions({ navigation }) {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState(questions);
   const [masterDataSource] = useState(questions);
+  const [status, setStatus] = useState('Masculino')
+
+  const setStatusFilter = status => {
+    if(status != 'Masculino') {
+      setFilteredDataSource([...content.filter(e => e.status === status)])
+    } else {
+      setFilteredDataSource(content)
+    }
+    setStatus(status)
+  }
+
+  // const renderItem = ({ item, index }) => {
+  //   return (
+  //     <Text
+  //       key={index}
+  //       style={styles.itemStyle}
+  //     >
+  //       {item.title}
+  //     </Text>
+  //   );
+  // }
+
+  const listTab = [
+    {
+      status: "Masculino ",
+    },
+    {
+      status: "Masturbacion",
+    },
+    {
+      status:"Orgasmo",
+    }
+    
+  ]
+
+  const content = [
+    {
+      title: "Masturbarse es malo para la salud?",
+      status: "Masturbacion ",
+    },
+    {
+      title:  "Masturbarse hace que te crezca pelo en las manos?" ,
+      status: "Masturbacion ",
+    },
+    {
+      title: "Masturbarse es malo para la salud?",
+      status: "Masturbacion",
+    },
+    {
+      title: "¿Las mujeres eyaculan?",
+      status:"Orgasmo",
+    }
+    
+  ]
+
+  const searchTags = status => {
+    // Check if searched text is not blank
+    if (status != setFilteredDataSource.tags) {
+      // Inserted text is not blank
+      // Filter the masterDataSource
+      // Update FilteredDataSource
+      const newData = {};
+      const textUpper = status.toUpperCase();
+      for (const item in masterDataSource) {
+        const itemData = item
+          ? item.toUpperCase()
+          : ''.toUpperCase();
+        if (itemData.indexOf(textUpper) > -1) {
+          newData[item] = masterDataSource[item];
+        }
+        for (const y in masterDataSource[item].tags) {
+          const itemData = masterDataSource[item].tags[y]
+            ? item.toUpperCase()
+            : ''.toUpperCase();
+          if (itemData.indexOf(textUpper) > -1) {
+            newData[item] = masterDataSource[item];
+          }
+        }
+      }
+
+      setFilteredDataSource(newData);
+      setSearch(status);
+    } else {
+      // Inserted text is blank
+      // Update FilteredDataSource with masterDataSource
+      setFilteredDataSource(masterDataSource);
+      setSearch(status);
+    }
+  };
 
   const searchFilterFunction = (text) => {
     // Check if searched text is not blank
@@ -123,6 +244,23 @@ export default function Questions({ navigation }) {
     );
   }
 
+  // eslint-disable-next-line react/no-unstable-nested-components
+  function TagsView({ item }) {
+    const getItem = (title) => {
+      // eslint-disable-next-line no-alert
+      alert(`${title}\n${masterDataSource[title].tags}`);
+    };
+
+    return (
+      <Text
+        style={styles.itemStyle}
+        onPress={() => getItem(item)}
+      >
+        {masterDataSource[item].tags}
+      </Text>
+    );
+  }
+
   return (
     <>
       <View style={{ flex: 1 }}>
@@ -134,6 +272,20 @@ export default function Questions({ navigation }) {
             underlineColorAndroid="transparent"
             placeholder="Duda"
           />
+          <SafeAreaView styles={styles.containerFilter}>
+            <View style={{ flex: 1, margin: 10, flexDirection: 'row', marginBottom: 45, alignSelf: 'center' }}>
+              {
+                listTab.map (e => (
+                  <TouchableOpacity 
+                    style={[styles.buttonFilter, status === e.status && styles.btnTabActive]}
+                    onPress={() => setStatusFilter(e.status)}
+                  >
+                    <Text>{e.status}</Text>
+                  </TouchableOpacity>
+                ))
+              }
+            </View>
+          </SafeAreaView>
           <FlatList
             data={Object.keys(filteredDataSource)}
             keyExtractor={(item, index) => index.toString()}
