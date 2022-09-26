@@ -1,7 +1,4 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable guard-for-in */
-/* eslint-disable no-shadow */
-/* eslint-disable react/jsx-no-bind */
+
 import * as React from 'react';
 import {
   Text,
@@ -9,11 +6,13 @@ import {
   StyleSheet,
   TextInput,
   FlatList,
+  Image
 } from 'react-native';
 import { useState } from 'react';
 import NavBar from '../NavBar/navbar';
 
 const questions = require('./preg.json');
+
 
 const styles = StyleSheet.create({
   container: {
@@ -21,7 +20,11 @@ const styles = StyleSheet.create({
     height: 670,
   },
   itemStyle: {
-    padding: 10,
+    padding: 49,
+    backgroundColor: '#c2dfe3',
+    margin: 20,
+    fontWeight: 'bold',
+    borderColor: '#009688',
   },
   textInputStyle: {
     height: 40,
@@ -30,6 +33,8 @@ const styles = StyleSheet.create({
     margin: 5,
     borderColor: '#009688',
     backgroundColor: '#FFFFFF',
+    fontSize: 20,
+    fontWeight: "bold"
   },
   menu: {
     width: '100%',
@@ -44,6 +49,12 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     padding: 18,
     marginLeft: 35,
+  },
+  Ilogin: {
+    marginTop: 10,
+    width: '100%',
+    height: '35%',
+
   },
 });
 
@@ -108,6 +119,7 @@ export default function Questions({ navigation }) {
     };
 
     return (
+      
       <Text
         style={styles.itemStyle}
         onPress={() => getItem(item)}
@@ -126,7 +138,7 @@ export default function Questions({ navigation }) {
             onChangeText={(text) => searchFilterFunction(text)}
             value={search}
             underlineColorAndroid="transparent"
-            placeholder="Duda"
+            placeholder="¿Cuál es tu duda?"
           />
           <FlatList
             data={Object.keys(filteredDataSource)}
