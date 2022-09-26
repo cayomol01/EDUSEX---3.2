@@ -5,7 +5,8 @@
     "Direccion": "6a. Ave. 6-63 Zona 10. Edificio Sixtino 1, Oficina 1004",
     "img": "fakeprofile.png",
     "phone": "####-####",
-    "mail": "----"
+    "mail": "----",
+    "id": "drollana"
   },
   "Dra. Sandoval": {
     "Especialidad": "Ginecologia",
@@ -13,6 +14,7 @@
     "Direccion": "P.Sherman. Calle Wallaby. 4-2 Sydney.",
     "img": "fakeprofile2.png",
     "phone": "5804-8678",
-    "mail": "lasandoval@jasmin.com"
+    "mail": "lasandoval@jasmin.com",
+    "id": "drasando"
   }
 }
