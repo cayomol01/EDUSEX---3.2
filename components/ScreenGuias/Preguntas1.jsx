@@ -67,8 +67,6 @@ const styles = StyleSheet.create({
 
 function Preguntas1({ navigation }) {
   const respuestas = ['F', 'F', 'F', 'F', 'V'];
-  const [answers, SetAnswers] = useState(['', '', '', '', '']);
-  const [buenas, setBuenas] = useState(0);
   const [res1, SetAnswer1] = useState('');
   const [res2, SetAnswer2] = useState('');
   const [res3, SetAnswer3] = useState('');
@@ -76,16 +74,17 @@ function Preguntas1({ navigation }) {
   const [res5, SetAnswer5] = useState('');
 
   function calificar() {
-    SetAnswers(res1, res2, res3, res4, res5);
+    const ans = [res1, res2, res3, res4, res5];
+    let buen = 0;
     for (let i = 0; i < respuestas.length; i += 1) {
-      if (answers[i] === respuestas[i]) {
-        setBuenas(buenas + 1);
+      if (ans[i] === respuestas[i]) {
+        buen += 1;
       }
     }
 
     navigation.navigate({
       name: 'Calificacion',
-      params: { buenas },
+      params: { correctas: buen },
       merge: true,
     });
   }
