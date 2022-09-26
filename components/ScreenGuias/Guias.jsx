@@ -1,9 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import {
-  StyleSheet, Text, View, FlatList,
+  StyleSheet, Text, View, FlatList, Image
 } from 'react-native';
-import { TouchableOpacity } from 'react-native-web';
+import { TouchableOpacity } from 'react-native';
 import React from 'react';
+
+const guidesIMG = require('../../assets/guides.png');
+const preserIMG = require('../../assets/preser.png');
+const homeIMG = require('../../assets/home.png');
+const questionsIMG = require('../../assets/questions.png');
+const profileIMG = require('../../assets/profile.png');
 
 const styles = StyleSheet.create({
   container: {
@@ -55,6 +61,21 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 20,
     color: '#000000',
+  },
+
+  menu: {
+    width: '100%',
+    height: '10%',
+    marginTop: 10,
+  },
+
+  iconsMenu: {
+    marginTop: 10,
+    width: '50%',
+    height: '50%',
+    resizeMode: 'contain',
+    padding: 18,
+    marginLeft: 35,
   },
 });
 
@@ -171,6 +192,45 @@ function Guias({ navigation }) {
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
+      <View style={styles.menu}>
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('Guias')
+                }
+          >
+            <Image style={styles.iconsMenu} source={guidesIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('Condoms')
+                }
+          >
+            <Image style={styles.iconsMenu} source={preserIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('MenuP')
+                }
+          >
+            <Image style={styles.iconsMenu} source={homeIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('Experts')
+                }
+          >
+            <Image style={styles.iconsMenu} source={questionsIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                  () => navigation.navigate('Users')
+                }
+          >
+            <Image style={styles.iconsMenu} source={profileIMG} />
+          </TouchableOpacity>
+        </View>
+      </View>
     </>
 
   );

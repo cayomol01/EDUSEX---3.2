@@ -248,7 +248,11 @@ function Condoms({ navigation }) {
       </ScrollView>
       <View style={styles.menu}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('Guias')
+                }
+          >
             <Image style={styles.iconsMenu} source={guidesIMG} />
           </TouchableOpacity>
           <TouchableOpacity
@@ -258,7 +262,11 @@ function Condoms({ navigation }) {
           >
             <Image style={styles.iconsMenu} source={preserIMG} />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('MenuP')
+                }
+          >
             <Image style={styles.iconsMenu} source={homeIMG} />
           </TouchableOpacity>
           <TouchableOpacity

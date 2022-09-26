@@ -20,7 +20,7 @@ import ScreenExp1 from '../components/experts/ScreenExp1';
 import Users from '../components/users/Users';
 import Questions from '../components/questions/Questions';
 import Guia1 from '../components/ScreenGuias/Guia1';
-import Guias from '../components/Guias';
+import Guias from '../components/ScreenGuias/Guias';
 import Preguntas1 from '../components/ScreenGuias/Preguntas1';
 import Calification from '../components/ScreenGuias/Calificacion';
 import Expertos from '../components/expertos/Expertos';
