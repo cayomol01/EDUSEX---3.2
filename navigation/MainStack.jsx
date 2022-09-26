@@ -16,18 +16,17 @@ import Screen9 from '../components/condoms/Screen9';
 import Screen10 from '../components/condoms/Screen10';
 
 import Experts from '../components/experts/Experts';
-import ScreenExp1 from '../components/experts/ScreenExp1';
+import ExpertProfile from '../components/experts/ExpertProfile';
 import Users from '../components/users/Users';
 import Questions from '../components/questions/Questions';
 import Guia1 from '../components/ScreenGuias/Guia1';
-import Guias from '../components/Guias';
+import Guias from '../components/ScreenGuias/Guias';
 import Preguntas1 from '../components/ScreenGuias/Preguntas1';
 import Calification from '../components/ScreenGuias/Calificacion';
 import Expertos from '../components/expertos/Expertos';
 import Login from '../components/expertos/Login';
-
+import ScreenChat from '../components/Chat/ScreenChat'
 const Stack = createNativeStackNavigator();
-
 function MainStack() {
   return (
     <NavigationContainer>
@@ -126,13 +125,18 @@ function MainStack() {
         />
 
         <Stack.Screen
-          name="ScreenExp1"
-          component={ScreenExp1}
+          name="ExpertProfile"
+          component={ExpertProfile}
         />
 
         <Stack.Screen
           name="Users"
           component={Users}
+        />
+
+        <Stack.Screen
+          name="ScreenChat"
+          component={ScreenChat}
         />
       </Stack.Navigator>
     </NavigationContainer>

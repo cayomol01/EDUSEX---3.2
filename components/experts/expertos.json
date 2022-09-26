@@ -1,0 +1,18 @@
+{
+  "Dr. Orellana": {
+    "Especialidad": "Sexologia",
+    "Desc": "El Dr.Orellana es un ginecologo altamente cualificado y con experiencia que ofrece un trato totalmente personalizado y de calidad con sus pacientes",
+    "Direccion": "6a. Ave. 6-63 Zona 10. Edificio Sixtino 1, Oficina 1004",
+    "img": "fakeprofile.png",
+    "phone": "####-####",
+    "mail": "----"
+  },
+  "Dra. Sandoval": {
+    "Especialidad": "Ginecologia",
+    "Desc": "La Dra. Jasmin Sandoval existe y es un ser humano. Es ginecologa.",
+    "Direccion": "P.Sherman. Calle Wallaby. 4-2 Sydney.",
+    "img": "fakeprofile2.png",
+    "phone": "5804-8678",
+    "mail": "lasandoval@jasmin.com"
+  }
+}

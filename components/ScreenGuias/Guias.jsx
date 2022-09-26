@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import {
-  StyleSheet, Text, View, FlatList,
+  StyleSheet, Text, View, FlatList, TouchableOpacity,
 } from 'react-native';
-import { TouchableOpacity } from 'react-native-web';
 import React from 'react';
+
+import NavBar from '../NavBar/navbar';
 
 const styles = StyleSheet.create({
   container: {
@@ -55,6 +56,21 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 20,
     color: '#000000',
+  },
+
+  menu: {
+    width: '100%',
+    height: '10%',
+    marginTop: 10,
+  },
+
+  iconsMenu: {
+    marginTop: 10,
+    width: '50%',
+    height: '50%',
+    resizeMode: 'contain',
+    padding: 18,
+    marginLeft: 35,
   },
 });
 
@@ -171,6 +187,7 @@ function Guias({ navigation }) {
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
+      <NavBar navigation={navigation} />
     </>
 
   );

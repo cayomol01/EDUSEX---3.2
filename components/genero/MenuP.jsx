@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
   Text, View, StyleSheet, TouchableOpacity, Image,
 } from 'react-native';
+import NavBar from '../NavBar/navbar';
 
 const guiasImg = require('../../assets/guias.png');
 const preservativosIMG = require('../../assets/Preservativos.png');
@@ -150,7 +151,7 @@ function MenuP({ navigation }) {
         </TouchableOpacity>
 
       </View>
-
+      <NavBar navigation={navigation} />
     </>
   );
 }

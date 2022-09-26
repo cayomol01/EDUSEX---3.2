@@ -1,148 +1,14 @@
 import * as React from 'react';
 import {
-  Text, View, StyleSheet, TouchableOpacity, Image, ScrollView, StatusBar,
+  Text, View, StyleSheet, TouchableOpacity, Image, ScrollView,
 } from 'react-native';
 
-function Expertos({ navigation }) {
-  return (
-    <>
-      <View style={styles.containerExperts}>
-        <View style={{ flex: 1, flexDirection: 'row' }}>
-          <Text style={styles.details}>
-            Empieza a contestar
-            {'\n'}
-            las dudas de los usuarios
-            {'\n\n'}
-            ¡Responde!
-          </Text>
-        </View>
-      </View>
+const guidesIMG = require('../../assets/guides.png');
+const preserIMG = require('../../assets/preser.png');
+const homeIMG = require('../../assets/home.png');
+const questionsIMG = require('../../assets/questions.png');
+const profileIMG = require('../../assets/profile.png');
 
-      <View style={styles.containerExpertsWel}>
-        <Text style={styles.textWelcome}>Bienvenid@</Text>
-      </View>
-      <View style={{ flex: 1, flexDirection: 'row' }}>
-
-        <Text style={styles.jobs}>
-          Mensajes
-          {'\n'}
-        </Text>
-
-      </View>
-      <View style={styles.containerJobs}>
-        <ScrollView style={styles.scrollViewJobs}>
-          <View style={{ flex: 1, justifyContent: 'center', padding: 15 }}>
-            <TouchableOpacity
-              onPress={
-                        () => navigation.navigate('Login')
-                    }
-            >
-              <View style={styles.containerCards}>
-                <Image style={styles.imageProfile} source={require('../../assets/Person1.png')} />
-                <Text style={styles.detailsInfo}>
-                  @theJPM
-                  {'\n'}
-                  Duda acerca..: ---
-                  {'\n'}
-                  Agenda tu consulta
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={
-                        () => navigation.navigate('Login')
-                    }
-            >
-              <View style={styles.containerCards}>
-                <Image style={styles.imageProfile} source={require('../../assets/perfil2.png')} />
-                <Text style={styles.detailsInfo}>
-                  @prisci08
-                  {'\n'}
-                  Duda acerca..: ---
-                  {'\n'}
-                  Agenda tu consulta
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={
-                        () => navigation.navigate('Login')
-                    }
-            >
-              <View style={styles.containerCards}>
-                <Image style={styles.imageProfile} source={require('../../assets/Person1.png')} />
-                <Text style={styles.detailsInfo}>
-                  @usdfa
-                  {'\n'}
-                  Duda acerca..: ---
-                  {'\n'}
-                  Agenda tu consulta
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={
-                        () => navigation.navigate('Login')
-                    }
-            >
-              <View style={styles.containerCards}>
-                <Image style={styles.imageProfile} source={require('../../assets/perfil2.png')} />
-                <Text style={styles.detailsInfo}>
-                  @estefelvi
-                  {'\n'}
-                  Duda acerca..: ---
-                  {'\n'}
-                  Agenda tu consulta
-                </Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
-      </View>
-      <View style={styles.menu}>
-        <View style={{ flex: 1, flexDirection: 'row' }}>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Guias')
-                  }
-          >
-            <Image style={styles.iconsMenu} source={require('../../assets/guides.png')} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Condoms')
-                }
-          >
-            <Image style={styles.iconsMenu} source={require('../../assets/preser.png')} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('MenuP')
-                }
-          >
-
-            <Image style={styles.iconsMenu} source={require('../../assets/home.png')} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                        () => navigation.navigate('Experts')
-                    }
-          >
-            <Image style={styles.iconsMenu} source={require('../../assets/questions.png')} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                        () => navigation.navigate('Users')
-                    }
-          >
-            <Image style={styles.iconsMenu} source={require('../../assets/profile.png')} />
-          </TouchableOpacity>
-        </View>
-      </View>
-    </>
-  );
-}
-export default Expertos;
 const styles = StyleSheet.create({
   containerExperts: {
     width: '90%',
@@ -249,3 +115,143 @@ const styles = StyleSheet.create({
     marginLeft: 35,
   },
 });
+
+function Expertos({ navigation }) {
+  return (
+    <>
+      <View style={styles.containerExperts}>
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          <Text style={styles.details}>
+            Empieza a contestar
+            {'\n'}
+            las dudas de los usuarios
+            {'\n\n'}
+            ¡Responde!
+          </Text>
+        </View>
+      </View>
+
+      <View style={styles.containerExpertsWel}>
+        <Text style={styles.textWelcome}>Bienvenid@</Text>
+      </View>
+      <View style={{ flex: 1, flexDirection: 'row' }}>
+
+        <Text style={styles.jobs}>
+          Mensajes
+          {'\n'}
+        </Text>
+
+      </View>
+      <View style={styles.containerJobs}>
+        <ScrollView style={styles.scrollViewJobs}>
+          <View style={{ flex: 1, justifyContent: 'center', padding: 15 }}>
+            <TouchableOpacity
+              onPress={
+                        () => navigation.navigate('Login')
+                    }
+            >
+              <View style={styles.containerCards}>
+                <Image style={styles.imageProfile} source={require('../../assets/Person1.png')} />
+                <Text style={styles.detailsInfo}>
+                  @theJPM
+                  {'\n'}
+                  Duda acerca..: ---
+                  {'\n'}
+                  Agenda tu consulta
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={
+                        () => navigation.navigate('Login')
+                    }
+            >
+              <View style={styles.containerCards}>
+                <Image style={styles.imageProfile} source={require('../../assets/perfil2.png')} />
+                <Text style={styles.detailsInfo}>
+                  @prisci08
+                  {'\n'}
+                  Duda acerca..: ---
+                  {'\n'}
+                  Agenda tu consulta
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={
+                        () => navigation.navigate('Login')
+                    }
+            >
+              <View style={styles.containerCards}>
+                <Image style={styles.imageProfile} source={require('../../assets/Person1.png')} />
+                <Text style={styles.detailsInfo}>
+                  @usdfa
+                  {'\n'}
+                  Duda acerca..: ---
+                  {'\n'}
+                  Agenda tu consulta
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={
+                        () => navigation.navigate('Login')
+                    }
+            >
+              <View style={styles.containerCards}>
+                <Image style={styles.imageProfile} source={require('../../assets/perfil2.png')} />
+                <Text style={styles.detailsInfo}>
+                  @estefelvi
+                  {'\n'}
+                  Duda acerca..: ---
+                  {'\n'}
+                  Agenda tu consulta
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
+      </View>
+      <View style={styles.menu}>
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('Guias')
+                }
+          >
+            <Image style={styles.iconsMenu} source={guidesIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('Condoms')
+                }
+          >
+            <Image style={styles.iconsMenu} source={preserIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('MenuP')
+                }
+          >
+            <Image style={styles.iconsMenu} source={homeIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('Experts')
+                }
+          >
+            <Image style={styles.iconsMenu} source={questionsIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                  () => navigation.navigate('Users')
+                }
+          >
+            <Image style={styles.iconsMenu} source={profileIMG} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </>
+  );
+}
+export default Expertos;

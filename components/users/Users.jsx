@@ -2,15 +2,11 @@ import * as React from 'react';
 import {
   Text, View, StyleSheet, Image, ScrollView, TouchableOpacity,
 } from 'react-native';
+import NavBar from '../NavBar/navbar';
 
 const fondoProfileIMG = require('../../assets/fondoProfile.png');
 const femalePIMG = require('../../assets/femaleP.png');
 const nextIMG = require('../../assets/next.png');
-const guidesIMG = require('../../assets/guides.png');
-const preserIMG = require('../../assets/preser.png');
-const homeIMG = require('../../assets/home.png');
-const questionsIMG = require('../../assets/questions.png');
-const profileIMG = require('../../assets/profile.png');
 
 const styles = StyleSheet.create({
   containerP: {
@@ -30,8 +26,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
     height: 150,
-    marginTop: -30,
-    marginBottom: -50,
+    marginTop: -23,
+    marginBottom: -51,
     borderRadius: 15,
     backgroundColor: '#FFFFFF',
     overflow: 'hidden',
@@ -42,7 +38,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
     height: '50%',
-    marginTop: -30,
+    marginTop: -23,
     padding: 30,
     borderRadius: 15,
     backgroundColor: '#FFFFFF',
@@ -120,21 +116,6 @@ const styles = StyleSheet.create({
     marginRight: 105,
   },
 
-  menu: {
-    width: '100%',
-    height: '10%',
-    marginTop: 10,
-  },
-
-  iconsMenu: {
-    marginTop: 10,
-    width: '50%',
-    height: '50%',
-    resizeMode: 'contain',
-    padding: 18,
-    marginLeft: 35,
-  },
-
   containerFondoP: {
     width: '100%',
     height: '30%',
@@ -204,37 +185,7 @@ function ScreenExp1({ navigation }) {
           </TouchableOpacity>
         </ScrollView>
       </View>
-      <View style={styles.menu}>
-        <View style={{ flex: 1, flexDirection: 'row' }}>
-          <TouchableOpacity>
-            <Image style={styles.iconsMenu} source={guidesIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Condoms')
-                }
-          >
-            <Image style={styles.iconsMenu} source={preserIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image style={styles.iconsMenu} source={homeIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Experts')
-                }
-          >
-            <Image style={styles.iconsMenu} source={questionsIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                  () => navigation.navigate('Users')
-                }
-          >
-            <Image style={styles.iconsMenu} source={profileIMG} />
-          </TouchableOpacity>
-        </View>
-      </View>
+      <NavBar navigation={navigation} />
     </>
   );
 }

@@ -24,6 +24,7 @@ module.exports = {
       ignoreDOMComponents: false,
       allowArrowFunctions: true,
     }],
+    'global-require': 0,
   },
   ignorePatterns: ['coverage/*', 'node_modules/*', 'dist/*'],
 };
