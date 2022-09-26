@@ -9,23 +9,16 @@ import {
   StyleSheet,
   TextInput,
   FlatList,
-  TouchableOpacity,
-  Image
 } from 'react-native';
 import { useState } from 'react';
-import NavBar from '../NavBar/navbar'
+import NavBar from '../NavBar/navbar';
 
 const questions = require('./preg.json');
-const guidesIMG = require('../../assets/guides.png');
-const preserIMG = require('../../assets/preser.png');
-const homeIMG = require('../../assets/home.png');
-const questionsIMG = require('../../assets/questions.png');
-const profileIMG = require('../../assets/profile.png');
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    height: 670
+    height: 670,
   },
   itemStyle: {
     padding: 10,
@@ -143,7 +136,7 @@ export default function Questions({ navigation }) {
           />
         </View>
       </View>
-      <NavBar navigation={navigation}/>
+      <NavBar navigation={navigation} />
     </>
   );
 }

@@ -1,15 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import {
-  StyleSheet, Text, View, FlatList, Image
+  StyleSheet, Text, View, FlatList, TouchableOpacity,
 } from 'react-native';
-import { TouchableOpacity } from 'react-native';
 import React from 'react';
 
-const guidesIMG = require('../../assets/guides.png');
-const preserIMG = require('../../assets/preser.png');
-const homeIMG = require('../../assets/home.png');
-const questionsIMG = require('../../assets/questions.png');
-const profileIMG = require('../../assets/profile.png');
+import NavBar from '../NavBar/navbar';
 
 const styles = StyleSheet.create({
   container: {
@@ -192,45 +187,7 @@ function Guias({ navigation }) {
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
-      <View style={styles.menu}>
-        <View style={{ flex: 1, flexDirection: 'row' }}>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Guias')
-                }
-          >
-            <Image style={styles.iconsMenu} source={guidesIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Condoms')
-                }
-          >
-            <Image style={styles.iconsMenu} source={preserIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('MenuP')
-                }
-          >
-            <Image style={styles.iconsMenu} source={homeIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Experts')
-                }
-          >
-            <Image style={styles.iconsMenu} source={questionsIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                  () => navigation.navigate('Users')
-                }
-          >
-            <Image style={styles.iconsMenu} source={profileIMG} />
-          </TouchableOpacity>
-        </View>
-      </View>
+      <NavBar navigation={navigation} />
     </>
 
   );

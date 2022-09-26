@@ -2,8 +2,7 @@ import * as React from 'react';
 import {
   Text, View, StyleSheet, TouchableOpacity, Image, ScrollView, StatusBar,
 } from 'react-native';
-import NavBar from '../NavBar/navbar'
-
+import NavBar from '../NavBar/navbar';
 
 const anilloIMG = require('../../assets/anillo.png');
 const capuchonIMG = require('../../assets/capuchon.png');
@@ -15,11 +14,6 @@ const esponjaIMG = require('../../assets/esponja.png');
 const inyeccionIMG = require('../../assets/inyeccion.png');
 const parcheIMG = require('../../assets/parche.png');
 const pastillaIMG = require('../../assets/pastilla.png');
-const guidesIMG = require('../../assets/guides.png');
-const preserIMG = require('../../assets/preser.png');
-const homeIMG = require('../../assets/home.png');
-const questionsIMG = require('../../assets/questions.png');
-const profileIMG = require('../../assets/profile.png');
 
 const styles = StyleSheet.create({
   container: {
@@ -248,7 +242,7 @@ function Condoms({ navigation }) {
           </TouchableOpacity>
         </View>
       </ScrollView>
-      <NavBar navigation={navigation}/>
+      <NavBar navigation={navigation} />
     </>
   );
 }

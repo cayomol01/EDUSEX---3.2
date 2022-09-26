@@ -2,16 +2,11 @@ import * as React from 'react';
 import {
   Text, View, StyleSheet, Image, ScrollView, TouchableOpacity,
 } from 'react-native';
-import NavBar from '../NavBar/navbar'
+import NavBar from '../NavBar/navbar';
 
 const fondoProfileIMG = require('../../assets/fondoProfile.png');
 const femalePIMG = require('../../assets/femaleP.png');
 const nextIMG = require('../../assets/next.png');
-const guidesIMG = require('../../assets/guides.png');
-const preserIMG = require('../../assets/preser.png');
-const homeIMG = require('../../assets/home.png');
-const questionsIMG = require('../../assets/questions.png');
-const profileIMG = require('../../assets/profile.png');
 
 const styles = StyleSheet.create({
   containerP: {
@@ -190,7 +185,7 @@ function ScreenExp1({ navigation }) {
           </TouchableOpacity>
         </ScrollView>
       </View>
-      <NavBar navigation={navigation}/>
+      <NavBar navigation={navigation} />
     </>
   );
 }

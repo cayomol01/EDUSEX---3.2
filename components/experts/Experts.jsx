@@ -1,20 +1,13 @@
+/* eslint-disable import/no-dynamic-require */
 import * as React from 'react';
 import {
   Text, View, StyleSheet, TouchableOpacity, Image, ScrollView,
 } from 'react-native';
-import NavBar from '../NavBar/navbar'
+import NavBar from '../NavBar/navbar';
 
-
-const fakeprofileIMG = require('../../assets/fakeprofile.png');
-const fakeprofile2IMG = require('../../assets/fakeprofile2.png');
-const guidesIMG = require('../../assets/guides.png');
-const preserIMG = require('../../assets/preser.png');
-const homeIMG = require('../../assets/home.png');
-const questionsIMG = require('../../assets/questions.png');
-const profileIMG = require('../../assets/profile.png');
 const edusexinfoIMG = require('../../assets/edusexInfo.png');
 
-const dicExpertos = require("./expertos.json")
+const dicExpertos = require('./expertos.json');
 
 const styles = StyleSheet.create({
   containerExperts: {
@@ -35,7 +28,7 @@ const styles = StyleSheet.create({
   details: {
     marginTop: 10,
     fontWeight: 'bold',
-    fontSize: "1.7vh",
+    fontSize: '1.7vh',
     marginBottom: 8,
     color: '#fff',
   },
@@ -118,7 +111,7 @@ function Experts({ navigation }) {
   return (
     <>
       <View style={styles.containerExperts}>
-        <View style={{display:"grid", gridTemplateColumns:"1fr 2fr", gap:"5%"}}>
+        <View style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '5%' }}>
           <Image style={styles.imageInfo} source={edusexinfoIMG} />
           <Text style={styles.details}>
             EXPERTOS
@@ -135,37 +128,39 @@ function Experts({ navigation }) {
       </View>
       <View style={styles.containerDiffExperts}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
-          {["Ginecología","Urología","Sexología","Psicología"].map((x) =>
+          {['Ginecología', 'Urología', 'Sexología', 'Psicología'].map((x) => (
             <TouchableOpacity>
               <Text style={styles.jobs}>
                 {x}
                 {'\n'}
               </Text>
             </TouchableOpacity>
-          )}
+          ))}
         </View>
       </View>
       <View style={styles.containerJobs}>
         <ScrollView style={styles.scrollViewJobs}>
           <View style={{ flex: 1, justifyContent: 'center', padding: 15 }}>
 
-            {Object.entries(dicExpertos).map(([key,value]) =>
-              <TouchableOpacity onPress={() => navigation.navigate('ExpertProfile',{name:key,details:value})}>
+            {Object.entries(dicExpertos).map(([key, value]) => (
+              <TouchableOpacity onPress={() => navigation.navigate('ExpertProfile', { name: key, details: value })}>
                 <View style={styles.containerCards}>
-                  <Image style={styles.imageProfile} source={require('../../assets/'+value.img)} />
+                  <Image style={styles.imageProfile} source={require(`../../assets/${value.img}`)} />
                   <Text style={styles.detailsInfo}>
                     {key}
                     {'\n'}
-                    Especialidad en: {value.Especialidad}
+                    Especialidad en:
+                    {' '}
+                    {value.Especialidad}
                   </Text>
                 </View>
               </TouchableOpacity>
-            )}
+            ))}
 
           </View>
         </ScrollView>
       </View>
-      <NavBar navigation={navigation}/>
+      <NavBar navigation={navigation} />
     </>
   );
 }

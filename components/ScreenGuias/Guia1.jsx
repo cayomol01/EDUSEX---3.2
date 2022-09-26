@@ -1,16 +1,8 @@
 import * as React from 'react';
 import {
-  Text, View, StyleSheet, Image, ScrollView
+  Text, View, StyleSheet, ScrollView,
+  TouchableOpacity,
 } from 'react-native';
-import { TouchableOpacity } from 'react-native';
-import NavBar from '../NavBar/navbar'
-
-
-const guidesIMG = require('../../assets/guides.png');
-const preserIMG = require('../../assets/preser.png');
-const homeIMG = require('../../assets/home.png');
-const questionsIMG = require('../../assets/questions.png');
-const profileIMG = require('../../assets/profile.png');
 
 const styles = StyleSheet.create({
   container: {
@@ -33,7 +25,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     borderRadius: 15,
     backgroundColor: '#FFFFFF',
-    height: 520
   },
 
   textTittle: {
@@ -49,7 +40,7 @@ const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: 'transparent',
     marginHorizontal: 20,
-    paddingTop: 10
+    paddingTop: 10,
   },
 
   button: {
@@ -125,7 +116,7 @@ function Guia1({ navigation }) {
           </TouchableOpacity>
         </ScrollView>
       </View>
-      <NavBar navigation={navigation}/>
+
     </>
   );
 }

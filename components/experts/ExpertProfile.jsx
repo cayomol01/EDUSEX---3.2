@@ -1,11 +1,10 @@
+/* eslint-disable import/no-dynamic-require */
 import * as React from 'react';
 import {
   Text, View, StyleSheet, Image, ScrollView, TouchableOpacity,
 } from 'react-native';
 import { AirbnbRating } from 'react-native-ratings';
-import NavBar from '../NavBar/navbar'
-const fakeprofileIMG = require('../../assets/fakeprofile.png');
-const nextIMG = require('../../assets/next.png');
+import NavBar from '../NavBar/navbar';
 
 const styles = StyleSheet.create({
   containerDr: {
@@ -70,7 +69,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 15,
     display: 'grid',
-    justifyItems: 'center'
+    justifyItems: 'center',
   },
 
   imageQ: {
@@ -83,7 +82,7 @@ const styles = StyleSheet.create({
 
   detailsQ: {
     fontWeight: 'bold',
-    fontSize: "1.7vh",
+    fontSize: '1.7vh',
     marginBottom: 5,
   },
 
@@ -100,13 +99,12 @@ const styles = StyleSheet.create({
 });
 
 function ExpertProfile({ route, navigation }) {
-
-  const {name,details} = route.params;
+  const { name, details } = route.params;
 
   return (
     <>
       <View style={styles.containerDr}>
-        <Image style={styles.imageProfileDr} source={require('../../assets/'+details.img)} />
+        <Image style={styles.imageProfileDr} source={require(`../../assets/${details.img}`)} />
       </View>
       <View style={styles.containerDr2}>
         <Text style={styles.textTittleDr}>{name}</Text>
@@ -135,21 +133,27 @@ function ExpertProfile({ route, navigation }) {
             {details.Desc}
           </Text>
           <Text>
-            {"\n"}
-            Teléfono: {details.phone}
+            {'\n'}
+            Teléfono:
+            {' '}
+            {details.phone}
             {'\n\n'}
-            Correo electrónico: {details.mail}
+            Correo electrónico:
+            {' '}
+            {details.mail}
             {'\n\n'}
-            Dirección: {details.Direccion}
+            Dirección:
+            {' '}
+            {details.Direccion}
           </Text>
         </ScrollView>
-          <TouchableOpacity style={{width: "80%"}}onPress={() => navigation.navigate('Screen1')}>
-            <View style={styles.containerQ}>
-              <Text style={styles.detailsQ}>Contactar</Text>
-            </View>
-          </TouchableOpacity>
+        <TouchableOpacity style={{ width: '80%' }} onPress={() => navigation.navigate('Screen1')}>
+          <View style={styles.containerQ}>
+            <Text style={styles.detailsQ}>Contactar</Text>
+          </View>
+        </TouchableOpacity>
       </View>
-      <NavBar navigation={navigation}/>
+      <NavBar navigation={navigation} />
     </>
   );
 }
