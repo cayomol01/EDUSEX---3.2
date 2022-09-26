@@ -16,7 +16,7 @@ import Screen9 from '../components/condoms/Screen9';
 import Screen10 from '../components/condoms/Screen10';
 
 import Experts from '../components/experts/Experts';
-import ScreenExp1 from '../components/experts/ScreenExp1';
+import ExpertProfile from '../components/experts/ExpertProfile';
 import Users from '../components/users/Users';
 import Questions from '../components/questions/Questions';
 import Guia1 from '../components/ScreenGuias/Guia1';
@@ -126,8 +126,8 @@ function MainStack() {
         />
 
         <Stack.Screen
-          name="ScreenExp1"
-          component={ScreenExp1}
+          name="ExpertProfile"
+          component={ExpertProfile}
         />
 
         <Stack.Screen

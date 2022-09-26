@@ -163,7 +163,7 @@ function Experts({ navigation }) {
           <View style={{ flex: 1, justifyContent: 'center', padding: 15 }}>
 
             {Object.entries(dicExpertos).map(([key,value]) =>
-              <TouchableOpacity onPress={() => navigation.navigate('ScreenExp1',{name:key,details:value})}>
+              <TouchableOpacity onPress={() => navigation.navigate('ExpertProfile',{name:key,details:value})}>
                 <View style={styles.containerCards}>
                   <Image style={styles.imageProfile} source={require('../../assets/'+value.img)} />
                   <Text style={styles.detailsInfo}>
