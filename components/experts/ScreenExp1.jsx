@@ -181,7 +181,11 @@ function ScreenExp1({ navigation }) {
       </View>
       <View style={styles.menu}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('Guias')
+                }
+          >
             <Image style={styles.iconsMenu} source={guidesIMG} />
           </TouchableOpacity>
           <TouchableOpacity
@@ -193,7 +197,7 @@ function ScreenExp1({ navigation }) {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={
-                  () => navigation.navigate('Rating')
+                    () => navigation.navigate('MenuP')
                 }
           >
             <Image style={styles.iconsMenu} source={homeIMG} />
