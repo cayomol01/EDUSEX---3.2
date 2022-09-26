@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function ScreenExp1({ route, navigation }) {
+function ExpertProfile({ route, navigation }) {
 
   const {name,details} = route.params;
 
@@ -209,4 +209,4 @@ function ScreenExp1({ route, navigation }) {
   );
 }
 
-export default ScreenExp1;
+export default ExpertProfile;
