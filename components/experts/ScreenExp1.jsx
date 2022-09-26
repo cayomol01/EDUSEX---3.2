@@ -3,6 +3,7 @@ import {
   Text, View, StyleSheet, Image, ScrollView, TouchableOpacity,
 } from 'react-native';
 import { AirbnbRating } from 'react-native-ratings';
+import { useState } from 'react';
 
 const fakeprofileIMG = require('../../assets/fakeprofile.png');
 const nextIMG = require('../../assets/next.png');
@@ -123,6 +124,25 @@ const styles = StyleSheet.create({
 });
 
 function ScreenExp1({ navigation }) {
+  const [puntajes, SetPuntajes] = useState({
+    'Dr Orellana': {
+      puntaje: 2,
+    },
+  });
+
+  const [disabled, setDisabled] = useState(false)
+
+  function handleRating(rating) {
+    SetPuntajes((prevState) => ({
+      ...prevState,
+      'Dr Orellana': { puntaje: (prevState['Dr Orellana'].puntaje + rating) / 2 },
+    }));
+    setDisabled(true);
+  }
+
+
+  
+
   return (
     <>
       <View style={styles.containerDr}>
@@ -143,8 +163,10 @@ function ScreenExp1({ navigation }) {
                 'Bueno',
                 'Excelente',
               ]}
-              defaultRating={3}
+              defaultRating={puntajes['Dr Orellana'].puntaje}
               size={15}
+              onFinishRating={handleRating}
+              isDisabled = {disabled}
             />
           </View>
         </ScrollView>
