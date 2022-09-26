@@ -25,9 +25,8 @@ import Preguntas1 from '../components/ScreenGuias/Preguntas1';
 import Calification from '../components/ScreenGuias/Calificacion';
 import Expertos from '../components/expertos/Expertos';
 import Login from '../components/expertos/Login';
-
+import ScreenChat from '../components/Chat/ScreenChat'
 const Stack = createNativeStackNavigator();
-
 function MainStack() {
   return (
     <NavigationContainer>
@@ -133,6 +132,11 @@ function MainStack() {
         <Stack.Screen
           name="Users"
           component={Users}
+        />
+
+        <Stack.Screen
+          name="ScreenChat"
+          component={ScreenChat}
         />
       </Stack.Navigator>
     </NavigationContainer>
