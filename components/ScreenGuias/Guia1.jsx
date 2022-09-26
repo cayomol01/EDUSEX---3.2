@@ -1,8 +1,14 @@
 import * as React from 'react';
 import {
-  Text, View, StyleSheet,
+  Text, View, StyleSheet, Image, ScrollView
 } from 'react-native';
-import { TouchableOpacity } from 'react-native-web';
+import { TouchableOpacity } from 'react-native';
+
+const guidesIMG = require('../../assets/guides.png');
+const preserIMG = require('../../assets/preser.png');
+const homeIMG = require('../../assets/home.png');
+const questionsIMG = require('../../assets/questions.png');
+const profileIMG = require('../../assets/profile.png');
 
 const styles = StyleSheet.create({
   container: {
@@ -14,6 +20,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: '#FFFFFF',
     overflow: 'hidden',
+    fontSize: 15,
   },
 
   container2: {
@@ -24,6 +31,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     borderRadius: 15,
     backgroundColor: '#FFFFFF',
+    height: 520
   },
 
   textTittle: {
@@ -39,16 +47,9 @@ const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: 'transparent',
     marginHorizontal: 20,
-    paddingTop: 10,
+    paddingTop: 10
   },
 
-  containerText: {
-    margin: 10,
-    fontSize: 15,
-    color: '#333333',
-    marginBottom: 5,
-
-  },
   button: {
     alignItems: 'center',
     backgroundColor: '#dd7973',
@@ -59,9 +60,25 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     borderRadius: 15,
   },
+
   buttonText: {
     fontSize: 20,
     color: '#000000',
+  },
+
+  menu: {
+    width: '100%',
+    height: '10%',
+    marginTop: 10,
+  },
+
+  iconsMenu: {
+    marginTop: 10,
+    width: '50%',
+    height: '50%',
+    resizeMode: 'contain',
+    padding: 18,
+    marginLeft: 35,
   },
 });
 
@@ -72,44 +89,78 @@ function Guia1({ navigation }) {
         <Text style={styles.textTittle}>Consentimiento</Text>
       </View>
       <View style={styles.container2}>
-        <Text style={styles.containerText}>
-          El consentimiento es el permiso que una persona da para
-          que se realice una acción. En el contexto de desarrollo
-          personal de una persona, lo que se entiende como
-          consentimiento es el permiso que una persona da para que
-          se realice una acción que involucre su cuerpo o su bienestar.
-        </Text>
-        <Text style={styles.containerText}>
-          El consentimiento en el ámbito sexual se puede expresar
-          de distintas maneras. Como el consentimiento a actos
-          sexuales, a afecto físico e incluso a fotos explicitas.
-        </Text>
-        <Text style={styles.containerText}>
-          Por lo tanto se deben tomar varias cosas en cuenta al
-          empezar un acto sexual. Dentro de estas se pueden encontrar:
-        </Text>
-        <Text style={styles.containerText}>
-          -El consentimiento se puede retirar en cualquier momento
-        </Text>
-        <Text style={styles.containerText}>
-          - No se debe intentar convencer a obtener consentimiento sobre algo.
-        </Text>
-        <Text style={styles.containerText}>
-          - Cuando alguien no esá lo suficientemente cuerdo o
-          consciente para dar consentimiento no se puede aceptar el consentimiento dado.
-        </Text>
-        <Text>
-          - Aprovecharse de una situación para obtener consentimiento está prohibido.
-        </Text>
-        <Text style={styles.containerText}>
-          - Y lo más importante de todo... Si una persona dice NO, significa NO
-        </Text>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('Preguntas 1')}
-        >
-          <Text style={styles.buttonText}>Evaluar</Text>
-        </TouchableOpacity>
+        <ScrollView>
+          <Text>
+            El consentimiento es el permiso que una persona da para
+            que se realice una acción. En el contexto de desarrollo
+            personal de una persona, lo que se entiende como
+            consentimiento es el permiso que una persona da para que
+            se realice una acción que involucre su cuerpo o su bienestar.
+            {'\n\n'}
+            El consentimiento en el ámbito sexual se puede expresar
+            de distintas maneras. Como el consentimiento a actos
+            sexuales, a afecto físico e incluso a fotos explicitas.
+            {'\n\n'}
+            Por lo tanto se deben tomar varias cosas en cuenta al
+            empezar un acto sexual. Dentro de estas se pueden encontrar:
+            {'\n\n'}
+            -El consentimiento se puede retirar en cualquier momento
+            {'\n\n'}
+            - No se debe intentar convencer a obtener consentimiento sobre algo.
+            {'\n\n'}
+            - Cuando alguien no esá lo suficientemente cuerdo o
+            consciente para dar consentimiento no se puede aceptar el consentimiento dado.
+            {'\n\n'}
+            - Aprovecharse de una situación para obtener consentimiento está prohibido.
+            {'\n\n'}
+            - Y lo más importante de todo... Si una persona dice NO, significa NO
+          </Text>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate('Preguntas 1')}
+          >
+            <Text style={styles.buttonText}>Evaluar</Text>
+          </TouchableOpacity>
+        </ScrollView>
+      </View>
+      <View style={styles.menu}>
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('Guias')
+                }
+          >
+            <Image style={styles.iconsMenu} source={guidesIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('Condoms')
+                }
+          >
+            <Image style={styles.iconsMenu} source={preserIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('MenuP')
+                }
+          >
+            <Image style={styles.iconsMenu} source={homeIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                    () => navigation.navigate('Experts')
+                }
+          >
+            <Image style={styles.iconsMenu} source={questionsIMG} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={
+                  () => navigation.navigate('Users')
+                }
+          >
+            <Image style={styles.iconsMenu} source={profileIMG} />
+          </TouchableOpacity>
+        </View>
       </View>
     </>
   );

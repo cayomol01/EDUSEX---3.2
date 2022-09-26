@@ -2,7 +2,7 @@ import * as React from 'react';
 import {
   Text, View, StyleSheet,
 } from 'react-native';
-import { TouchableOpacity } from 'react-native-web';
+import { TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 
 const styles = StyleSheet.create({

@@ -3,6 +3,12 @@ import {
   Text, View, StyleSheet, TouchableOpacity, Image, ScrollView, StatusBar,
 } from 'react-native';
 
+const guidesIMG = require('../../assets/guides.png');
+const preserIMG = require('../../assets/preser.png');
+const homeIMG = require('../../assets/home.png');
+const questionsIMG = require('../../assets/questions.png');
+const profileIMG = require('../../assets/profile.png');
+
 function Expertos({ navigation }) {
   return (
     <>
@@ -104,38 +110,37 @@ function Expertos({ navigation }) {
           <TouchableOpacity
             onPress={
                     () => navigation.navigate('Guias')
-                  }
+                }
           >
-            <Image style={styles.iconsMenu} source={require('../../assets/guides.png')} />
+            <Image style={styles.iconsMenu} source={guidesIMG} />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={
                     () => navigation.navigate('Condoms')
                 }
           >
-            <Image style={styles.iconsMenu} source={require('../../assets/preser.png')} />
+            <Image style={styles.iconsMenu} source={preserIMG} />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={
                     () => navigation.navigate('MenuP')
                 }
           >
-
-            <Image style={styles.iconsMenu} source={require('../../assets/home.png')} />
+            <Image style={styles.iconsMenu} source={homeIMG} />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={
-                        () => navigation.navigate('Experts')
-                    }
+                    () => navigation.navigate('Experts')
+                }
           >
-            <Image style={styles.iconsMenu} source={require('../../assets/questions.png')} />
+            <Image style={styles.iconsMenu} source={questionsIMG} />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={
-                        () => navigation.navigate('Users')
-                    }
+                  () => navigation.navigate('Users')
+                }
           >
-            <Image style={styles.iconsMenu} source={require('../../assets/profile.png')} />
+            <Image style={styles.iconsMenu} source={profileIMG} />
           </TouchableOpacity>
         </View>
       </View>
