@@ -93,7 +93,7 @@ function Genero({ navigation }) {
   return (
     <>
       <TouchableOpacity
-        onPress={() => navigation.navigate('Login')}
+        onPress={() => navigation.navigate('ScreenChat')}
       >
         <View style={styles.containerE}>
           <Image style={styles.imagenE} source={lEIMG} />

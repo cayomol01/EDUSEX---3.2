@@ -81,8 +81,6 @@ function Login({ navigation }) {
         </View>
       </TouchableOpacity>
     </View>
-
   );
 }
-
 export default Login;
