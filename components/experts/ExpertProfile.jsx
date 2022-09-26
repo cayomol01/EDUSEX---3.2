@@ -147,7 +147,7 @@ function ExpertProfile({ route, navigation }) {
             {details.Direccion}
           </Text>
         </ScrollView>
-        <TouchableOpacity style={{ width: '80%' }} onPress={() => navigation.navigate('Screen1')}>
+        <TouchableOpacity style={{ width: '80%' }} onPress={() => navigation.navigate('ScreenChat')}>
           <View style={styles.containerQ}>
             <Text style={styles.detailsQ}>Contactar</Text>
           </View>

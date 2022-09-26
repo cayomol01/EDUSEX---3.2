@@ -31,10 +31,7 @@ function MainStack() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
-            name="ScreenChat"
-            component={ScreenChat}
-        />
+
         <Stack.Screen
           name="Genero"
           component={Genero}
@@ -138,6 +135,10 @@ function MainStack() {
           component={Users}
         />
 
+        <Stack.Screen
+            name="ScreenChat"
+            component={ScreenChat}
+        />
 
       </Stack.Navigator>
     </NavigationContainer>
