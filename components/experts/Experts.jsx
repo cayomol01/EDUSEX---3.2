@@ -12,6 +12,8 @@ const questionsIMG = require('../../assets/questions.png');
 const profileIMG = require('../../assets/profile.png');
 const edusexinfoIMG = require('../../assets/edusexInfo.png');
 
+const dicExpertos = require("./expertos.json")
+
 const styles = StyleSheet.create({
   containerExperts: {
     width: '90%',
@@ -25,16 +27,13 @@ const styles = StyleSheet.create({
   },
 
   imageInfo: {
-    marginTop: 10,
-    width: '50%',
-    height: '70%',
     resizeMode: 'contain',
   },
 
   details: {
     marginTop: 10,
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: "1.7vh",
     marginBottom: 8,
     color: '#fff',
   },
@@ -50,6 +49,7 @@ const styles = StyleSheet.create({
   textWelcome: {
     fontWeight: 'bold',
     fontSize: 40,
+    textAlign: 'center',
   },
 
   containerDiffExperts: {
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
 
   imageProfile: {
     marginTop: 10,
-    width: '50%',
+    width: '35vw',
     height: '100%',
     resizeMode: 'contain',
     marginLeft: -25,
@@ -131,120 +131,54 @@ function Experts({ navigation }) {
   return (
     <>
       <View style={styles.containerExperts}>
-        <View style={{ flex: 1, flexDirection: 'row' }}>
+        <View style={{display:"grid", gridTemplateColumns:"1fr 2fr", gap:"5%"}}>
           <Image style={styles.imageInfo} source={edusexinfoIMG} />
           <Text style={styles.details}>
-            EDUSEX
+            EXPERTOS
             {'\n'}
-            Empieza a consultar
-            {'\n'}
-            con los profesionales
+            Empieza a consultar con los profesionales
             {'\n\n'}
             ¡Contáctalos!
           </Text>
         </View>
+
       </View>
       <View style={styles.containerExpertsWel}>
-        <Text style={styles.textWelcome}>Bienvenid@</Text>
+        <Text style={styles.textWelcome}>Expertos</Text>
       </View>
       <View style={styles.containerDiffExperts}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
-          <TouchableOpacity>
-            <Text style={styles.jobs}>
-              Ginecología
-              {'\n'}
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.jobs}>
-              Urología
-              {'\n'}
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.jobs}>
-              Sexología
-              {'\n'}
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.jobs}>
-              Psicología
-              {'\n'}
-            </Text>
-          </TouchableOpacity>
+          {["Ginecología","Urología","Sexología","Psicología"].map((x) =>
+            <TouchableOpacity>
+              <Text style={styles.jobs}>
+                {x}
+                {'\n'}
+              </Text>
+            </TouchableOpacity>
+          )}
         </View>
       </View>
       <View style={styles.containerJobs}>
         <ScrollView style={styles.scrollViewJobs}>
           <View style={{ flex: 1, justifyContent: 'center', padding: 15 }}>
-            <TouchableOpacity
-              onPress={
-                        () => navigation.navigate('ScreenExp1')
-                    }
-            >
-              <View style={styles.containerCards}>
-                <Image style={styles.imageProfile} source={fakeprofileIMG} />
-                <Text style={styles.detailsInfo}>
-                  Dr. Orellana
-                  {'\n'}
-                  Especialista en: ---
-                  {'\n'}
-                  Agenda tu consulta
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={
-                        () => navigation.navigate('Screen1')
-                    }
-            >
-              <View style={styles.containerCards}>
-                <Image style={styles.imageProfile} source={fakeprofile2IMG} />
-                <Text style={styles.detailsInfo}>
-                  Dr. Sandoval
-                  {'\n'}
-                  Especialista en: ---
-                  {'\n'}
-                  Agenda tu consulta
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={
-                        () => navigation.navigate('Screen1')
-                    }
-            >
-              <View style={styles.containerCards}>
-                <Image style={styles.imageProfile} source={fakeprofileIMG} />
-                <Text style={styles.detailsInfo}>
-                  Dr. Orellana
-                  {'\n'}
-                  Especialista en: ---
-                  {'\n'}
-                  Agenda tu consulta
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={
-                        () => navigation.navigate('Screen1')
-                    }
-            >
-              <View style={styles.containerCards}>
-                <Image style={styles.imageProfile} source={fakeprofile2IMG} />
-                <Text style={styles.detailsInfo}>
-                  Dr. Sandoval
-                  {'\n'}
-                  Especialista en: ---
-                  {'\n'}
-                  Agenda tu consulta
-                </Text>
-              </View>
-            </TouchableOpacity>
+
+            {Object.entries(dicExpertos).map(([key,value]) =>
+              <TouchableOpacity onPress={() => navigation.navigate('ExpertProfile',{name:key,details:value})}>
+                <View style={styles.containerCards}>
+                  <Image style={styles.imageProfile} source={require('../../assets/'+value.img)} />
+                  <Text style={styles.detailsInfo}>
+                    {key}
+                    {'\n'}
+                    Especialidad en: {value.Especialidad}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            )}
+
           </View>
         </ScrollView>
       </View>
+
       <View style={styles.menu}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
           <TouchableOpacity

@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
     width: '50%',
     height: '100%',
     resizeMode: 'contain',
-    marginLeft: -25,
     marginTop: 30,
   },
 
@@ -74,10 +73,9 @@ const styles = StyleSheet.create({
     padding: 15,
     backgroundColor: '#c2dfe3',
     alignItems: 'center',
-    marginBottom: 15,
     marginTop: 15,
-    flex: 1,
-    flexDirection: 'row',
+    display: 'grid',
+    justifyItems: 'center'
   },
 
   imageQ: {
@@ -90,9 +88,8 @@ const styles = StyleSheet.create({
 
   detailsQ: {
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: "1.7vh",
     marginBottom: 5,
-    marginLeft: 15,
   },
 
   menu: {
@@ -122,14 +119,17 @@ const styles = StyleSheet.create({
   },
 });
 
-function ScreenExp1({ navigation }) {
+function ExpertProfile({ route, navigation }) {
+
+  const {name,details} = route.params;
+
   return (
     <>
       <View style={styles.containerDr}>
-        <Image style={styles.imageProfileDr} source={fakeprofileIMG} />
+        <Image style={styles.imageProfileDr} source={require('../../assets/'+details.img)} />
       </View>
       <View style={styles.containerDr2}>
-        <Text style={styles.textTittleDr}>Dr. Orellana</Text>
+        <Text style={styles.textTittleDr}>{name}</Text>
       </View>
       <View style={styles.containerPoints}>
         <ScrollView style={styles.viewContainerPoints}>
@@ -152,33 +152,24 @@ function ScreenExp1({ navigation }) {
       <View style={styles.containerDr3}>
         <ScrollView style={styles.scrollView}>
           <Text>
-            El Dr. Orellana es un ginecólogo altamente cualificado y con experiencia
-            que ofrece un trato totalmente personalizado y de calidad a sus pacientes.
+            {details.Desc}
           </Text>
           <Text>
+            {"\n"}
+            Teléfono: {details.phone}
             {'\n\n'}
-            Teléfono: ####-####
+            Correo electrónico: {details.mail}
             {'\n\n'}
-            Correo electrónico: ---@gmail.com
-            {'\n\n'}
-            Dirección
-            {'\n\n'}
-            6a. Ave. 6-63 zona 10 Edificio Sixtino 1, Nivel 10, Oficina 1004
-            {'\n\n'}
-            (Parqueo adentro del Edificio Sixtino 1)
+            Dirección: {details.Direccion}
           </Text>
-          <TouchableOpacity
-            onPress={
-                () => navigation.navigate('Screen1')
-            }
-          >
+        </ScrollView>
+          <TouchableOpacity style={{width: "80%"}}onPress={() => navigation.navigate('Screen1')}>
             <View style={styles.containerQ}>
-              <Text style={styles.detailsQ}>Realiza tus preguntas :)</Text>
-              <Image style={styles.imageQ} source={nextIMG} />
+              <Text style={styles.detailsQ}>Contactar</Text>
             </View>
           </TouchableOpacity>
-        </ScrollView>
       </View>
+
       <View style={styles.menu}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
           <TouchableOpacity
@@ -222,4 +213,4 @@ function ScreenExp1({ navigation }) {
   );
 }
 
-export default ScreenExp1;
+export default ExpertProfile;
