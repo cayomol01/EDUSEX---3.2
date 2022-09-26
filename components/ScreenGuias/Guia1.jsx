@@ -3,6 +3,8 @@ import {
   Text, View, StyleSheet, Image, ScrollView
 } from 'react-native';
 import { TouchableOpacity } from 'react-native';
+import NavBar from '../NavBar/navbar'
+
 
 const guidesIMG = require('../../assets/guides.png');
 const preserIMG = require('../../assets/preser.png');
@@ -123,45 +125,7 @@ function Guia1({ navigation }) {
           </TouchableOpacity>
         </ScrollView>
       </View>
-      <View style={styles.menu}>
-        <View style={{ flex: 1, flexDirection: 'row' }}>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Guias')
-                }
-          >
-            <Image style={styles.iconsMenu} source={guidesIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Condoms')
-                }
-          >
-            <Image style={styles.iconsMenu} source={preserIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('MenuP')
-                }
-          >
-            <Image style={styles.iconsMenu} source={homeIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Experts')
-                }
-          >
-            <Image style={styles.iconsMenu} source={questionsIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                  () => navigation.navigate('Users')
-                }
-          >
-            <Image style={styles.iconsMenu} source={profileIMG} />
-          </TouchableOpacity>
-        </View>
-      </View>
+      <NavBar navigation={navigation}/>
     </>
   );
 }

@@ -3,14 +3,9 @@ import {
   Text, View, StyleSheet, Image, ScrollView, TouchableOpacity,
 } from 'react-native';
 import { AirbnbRating } from 'react-native-ratings';
-
+import NavBar from '../NavBar/navbar'
 const fakeprofileIMG = require('../../assets/fakeprofile.png');
 const nextIMG = require('../../assets/next.png');
-const guidesIMG = require('../../assets/guides.png');
-const preserIMG = require('../../assets/preser.png');
-const homeIMG = require('../../assets/home.png');
-const questionsIMG = require('../../assets/questions.png');
-const profileIMG = require('../../assets/profile.png');
 
 const styles = StyleSheet.create({
   containerDr: {
@@ -18,7 +13,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
     height: 290,
-    marginTop: -30,
+    marginTop: '-22px',
     borderRadius: 15,
     backgroundColor: '#ffff',
   },
@@ -28,7 +23,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
     height: 150,
-    marginTop: -30,
+    marginTop: '-22px',
     marginBottom: -50,
     borderRadius: 15,
     backgroundColor: '#FFFFFF',
@@ -40,7 +35,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
     height: '37.5%',
-    marginTop: -30,
+    marginTop: '-22px',
     padding: 30,
     borderRadius: 15,
     backgroundColor: '#FFFFFF',
@@ -92,26 +87,11 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 
-  menu: {
-    width: '100%',
-    height: '10%',
-    marginTop: 10,
-  },
-
-  iconsMenu: {
-    marginTop: 10,
-    width: '50%',
-    height: '50%',
-    resizeMode: 'contain',
-    padding: 18,
-    marginLeft: 35,
-  },
-
   containerPoints: {
     width: '100%',
     height: '15%',
     backgroundColor: '#fff',
-    marginTop: -30,
+    marginTop: -22,
   },
 
   viewContainerPoints: {
@@ -169,46 +149,7 @@ function ExpertProfile({ route, navigation }) {
             </View>
           </TouchableOpacity>
       </View>
-
-      <View style={styles.menu}>
-        <View style={{ flex: 1, flexDirection: 'row' }}>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Guias')
-                }
-          >
-            <Image style={styles.iconsMenu} source={guidesIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Condoms')
-                }
-          >
-            <Image style={styles.iconsMenu} source={preserIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('MenuP')
-                }
-          >
-            <Image style={styles.iconsMenu} source={homeIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Experts')
-                }
-          >
-            <Image style={styles.iconsMenu} source={questionsIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                  () => navigation.navigate('Users')
-                }
-          >
-            <Image style={styles.iconsMenu} source={profileIMG} />
-          </TouchableOpacity>
-        </View>
-      </View>
+      <NavBar navigation={navigation}/>
     </>
   );
 }

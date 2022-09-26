@@ -2,6 +2,8 @@ import * as React from 'react';
 import {
   Text, View, StyleSheet, TouchableOpacity, Image, ScrollView,
 } from 'react-native';
+import NavBar from '../NavBar/navbar'
+
 
 const fakeprofileIMG = require('../../assets/fakeprofile.png');
 const fakeprofile2IMG = require('../../assets/fakeprofile2.png');
@@ -110,21 +112,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginLeft: -15,
   },
-
-  menu: {
-    width: '100%',
-    height: '10%',
-    marginTop: 10,
-  },
-
-  iconsMenu: {
-    marginTop: 10,
-    width: '50%',
-    height: '50%',
-    resizeMode: 'contain',
-    padding: 18,
-    marginLeft: 35,
-  },
 });
 
 function Experts({ navigation }) {
@@ -178,46 +165,7 @@ function Experts({ navigation }) {
           </View>
         </ScrollView>
       </View>
-
-      <View style={styles.menu}>
-        <View style={{ flex: 1, flexDirection: 'row' }}>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Guias')
-                }
-          >
-            <Image style={styles.iconsMenu} source={guidesIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Condoms')
-                }
-          >
-            <Image style={styles.iconsMenu} source={preserIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('MenuP')
-                }
-          >
-            <Image style={styles.iconsMenu} source={homeIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                    () => navigation.navigate('Experts')
-                }
-          >
-            <Image style={styles.iconsMenu} source={questionsIMG} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-                  () => navigation.navigate('Users')
-                }
-          >
-            <Image style={styles.iconsMenu} source={profileIMG} />
-          </TouchableOpacity>
-        </View>
-      </View>
+      <NavBar navigation={navigation}/>
     </>
   );
 }
