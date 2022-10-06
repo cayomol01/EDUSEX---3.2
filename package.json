@@ -10,7 +10,7 @@
     "eject": "expo eject",
     "eslint": "eslint . --ext .js --ext .jsx",
     "eslint-fix": "eslint . --ext .js --ext .jsx --fix",
-    "test": "jest --coverage"
+    "test": "jest --coverage -u"
   },
   "dependencies": {
     "@babel/preset-react": "^7.18.6",
@@ -59,7 +59,7 @@
     ],
     "transform": {
       "^.+\\.(js|jsx)$": "babel-jest"
-   }
+    }
   },
   "private": true
 }
