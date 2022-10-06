@@ -7,16 +7,20 @@ import { useEffect } from 'react';
 function Calificacion({ route }) {
   useEffect(() => {
 
-  }, [route.params?.buenas]);
+  }, [route.params?.correctas]);
 
   return (
     <Text>
-      Has obtenido:
-      {route.params?.buenas}
+      Has obtenido: 
+      {' '} 
+      {route.params?.correctas}
       {' '}
       de 5
     </Text>
   );
 }
+
+
+
 
 export default Calificacion;
