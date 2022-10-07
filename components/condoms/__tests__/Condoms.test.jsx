@@ -6,3 +6,5 @@ test('renders correctly', () => {
   const tree = renderer.create(<Condoms />).toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+
