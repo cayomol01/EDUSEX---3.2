@@ -8,8 +8,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "eslint": "eslint . --ext .js --ext .jsx",
-    "eslint-fix": "eslint . --ext .js --ext .jsx --fix",
+    "lint": "eslint . --ext .js --ext .jsx",
+    "lint-fix": "eslint . --ext .js --ext .jsx --fix",
     "test": "jest --coverage -u"
   },
   "dependencies": {
