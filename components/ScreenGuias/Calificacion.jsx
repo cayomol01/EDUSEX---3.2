@@ -11,16 +11,13 @@ function Calificacion({ route }) {
 
   return (
     <Text>
-      Has obtenido: 
-      {' '} 
+      Has obtenido:
+      {' '}
       {route.params?.correctas}
       {' '}
       de 5
     </Text>
   );
 }
-
-
-
 
 export default Calificacion;

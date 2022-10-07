@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import {
   Text,
@@ -6,13 +5,11 @@ import {
   StyleSheet,
   TextInput,
   FlatList,
-  Image
 } from 'react-native';
 import { useState } from 'react';
 import NavBar from '../NavBar/navbar';
 
 const questions = require('./preg.json');
-
 
 const styles = StyleSheet.create({
   container: {
@@ -34,7 +31,7 @@ const styles = StyleSheet.create({
     borderColor: '#009688',
     backgroundColor: '#FFFFFF',
     fontSize: 20,
-    fontWeight: "bold"
+    fontWeight: 'bold',
   },
   menu: {
     width: '100%',
@@ -119,7 +116,7 @@ export default function Questions({ navigation }) {
     };
 
     return (
-      
+
       <Text
         style={styles.itemStyle}
         onPress={() => getItem(item)}

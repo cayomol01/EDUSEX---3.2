@@ -18,5 +18,6 @@ package-lock.json
 .vscode
 
 coverage/
+/coverage/
 
 **/__snapshots__

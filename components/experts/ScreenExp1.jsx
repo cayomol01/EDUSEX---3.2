@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-bind */
+
 import * as React from 'react';
 import {
   Text, View, StyleSheet, Image, ScrollView, TouchableOpacity,
@@ -130,7 +132,7 @@ function ScreenExp1({ navigation }) {
     },
   });
 
-  const [disabled, setDisabled] = useState(false)
+  const [disabled, setDisabled] = useState(false);
 
   function handleRating(rating) {
     SetPuntajes((prevState) => ({
@@ -139,9 +141,6 @@ function ScreenExp1({ navigation }) {
     }));
     setDisabled(true);
   }
-
-
-  
 
   return (
     <>
@@ -166,7 +165,7 @@ function ScreenExp1({ navigation }) {
               defaultRating={puntajes['Dr Orellana'].puntaje}
               size={15}
               onFinishRating={handleRating}
-              isDisabled = {disabled}
+              isDisabled={disabled}
             />
           </View>
         </ScrollView>
