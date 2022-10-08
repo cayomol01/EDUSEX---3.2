@@ -82,17 +82,15 @@ export default function Questions({ navigation }) {
       const newData = {};
       const textUpper = text.toUpperCase();
       for (const item in masterDataSource) {
-        const itemData = item
-          ? item.toUpperCase()
-          : ''.toUpperCase();
+
+        const itemData = item.toUpperCase().slice(1,-1)
+
         if (itemData.indexOf(textUpper) > -1) {
           newData[item] = masterDataSource[item];
         }
         for (const y in masterDataSource[item].tags) {
-          const itemData = masterDataSource[item].tags[y]
-            ? item.toUpperCase()
-            : ''.toUpperCase();
-          if (itemData.indexOf(textUpper) > -1) {
+          const itemData2 = masterDataSource[item].tags[y].toUpperCase()
+          if (itemData2.indexOf(textUpper) > -1) {
             newData[item] = masterDataSource[item];
           }
         }
@@ -112,7 +110,7 @@ export default function Questions({ navigation }) {
   function ItemView({ item }) {
     const getItem = (title) => {
       // eslint-disable-next-line no-alert
-      alert(`${title}\n${masterDataSource[title].info}`);
+      console.log(`${title}\n${masterDataSource[title].info}`);
     };
 
     return (
