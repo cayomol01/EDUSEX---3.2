@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     marginHorizontal: 20,
     paddingTop: 10,
+    width: '70vw'
   },
 
   imageP: {
