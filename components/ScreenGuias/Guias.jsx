@@ -181,7 +181,7 @@ function Guias({ navigation }) {
 
   return (
     <>
-      <View style={styles.navTitle}><Text style={styles.navTitle}>Guias</Text></View>
+      <View style={styles.navTitle}><Text style={styles.navTitle}>GUIAS</Text></View>
       <FlatList
         data={Data}
         renderItem={renderItem}
