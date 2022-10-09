@@ -103,6 +103,7 @@ function Preguntas1({ navigation }) {
             <TouchableOpacity
               style={styles.button}
               onPress={() => SetAnswer1('V')}
+              testID={"1Verdad"}
             >
               <Text>Verdadero</Text>
             </TouchableOpacity>
@@ -111,6 +112,7 @@ function Preguntas1({ navigation }) {
             <TouchableOpacity
               style={styles.button}
               onPress={() => SetAnswer1('F')}
+              testID={"1Falso"}
             >
               <Text>Falso</Text>
             </TouchableOpacity>
@@ -126,6 +128,7 @@ function Preguntas1({ navigation }) {
             <TouchableOpacity
               style={styles.button}
               onPress={() => SetAnswer2('V')}
+              testID={"2Verdad"}
             >
               <Text>Verdadero</Text>
             </TouchableOpacity>
@@ -134,6 +137,7 @@ function Preguntas1({ navigation }) {
             <TouchableOpacity
               style={styles.button}
               onPress={() => SetAnswer2('F')}
+              testID={"2Falso"}
             >
               <Text>Falso</Text>
             </TouchableOpacity>
@@ -149,6 +153,7 @@ function Preguntas1({ navigation }) {
             <TouchableOpacity
               style={styles.button}
               onPress={() => SetAnswer3('V')}
+              testID={"3Verdad"}
             >
               <Text>Verdadero</Text>
             </TouchableOpacity>
@@ -157,6 +162,7 @@ function Preguntas1({ navigation }) {
             <TouchableOpacity
               style={styles.button}
               onPress={() => SetAnswer3('F')}
+              testID={"3Falso"}
             >
               <Text>Falso</Text>
             </TouchableOpacity>
@@ -172,6 +178,7 @@ function Preguntas1({ navigation }) {
             <TouchableOpacity
               style={styles.button}
               onPress={() => SetAnswer4('V')}
+              testID={"4Verdad"}
             >
               <Text>Verdadero</Text>
             </TouchableOpacity>
@@ -180,6 +187,7 @@ function Preguntas1({ navigation }) {
             <TouchableOpacity
               style={styles.button}
               onPress={() => SetAnswer4('F')}
+              testID={"4Falso"}
             >
               <Text>Falso</Text>
             </TouchableOpacity>
@@ -194,6 +202,7 @@ function Preguntas1({ navigation }) {
             <TouchableOpacity
               style={styles.button}
               onPress={() => SetAnswer5('V')}
+              testID={"5Verdad"}
             >
               <Text>Verdadero</Text>
             </TouchableOpacity>
@@ -202,6 +211,7 @@ function Preguntas1({ navigation }) {
             <TouchableOpacity
               style={styles.button}
               onPress={() => SetAnswer5('F')}
+              testID={"5Falso"}
             >
               <Text>Falso</Text>
             </TouchableOpacity>
