@@ -112,7 +112,7 @@ function MenuP({ navigation }) {
 
             <View style={styles.textdato}>
               <Text style={styles.text}>
-                GUIAS
+                Guias
               </Text>
             </View>
           </View>
@@ -128,7 +128,7 @@ function MenuP({ navigation }) {
 
             <View style={styles.textdato}>
               <Text style={styles.text}>
-                PRESERVATIVOS
+                Preservativos
               </Text>
             </View>
           </View>
@@ -144,7 +144,7 @@ function MenuP({ navigation }) {
 
             <View style={styles.textdato}>
               <Text style={styles.text}>
-                PREGUNTAS
+                Preguntas
               </Text>
             </View>
           </View>
