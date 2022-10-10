@@ -111,6 +111,7 @@ function Guia1({ navigation }) {
           <TouchableOpacity
             style={styles.button}
             onPress={() => navigation.navigate('Preguntas 1')}
+            testID={"PreguntasButton"}
           >
             <Text style={styles.buttonText}>Evaluar</Text>
           </TouchableOpacity>

@@ -222,6 +222,7 @@ function Preguntas1({ navigation }) {
           style={styles.button}
           // eslint-disable-next-line react/jsx-no-bind
           onPress={calificar}
+          testID ={"EvaluarP1"}
         >
           <Text style={styles.buttonText}>Calificar</Text>
         </TouchableOpacity>

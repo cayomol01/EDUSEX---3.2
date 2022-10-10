@@ -164,6 +164,7 @@ function Guias({ navigation }) {
       <TouchableOpacity
         style={styles.button}
         activeOpacity={0.6}
+        testID={title}
         onPress={() => navigation.navigate(ruta)}
       >
         <View style={stylesprueba.textContainer}>
