@@ -10,22 +10,45 @@ const db = firebase.firestore();
 
 function Bubble({user,text,date}) {
     return (
-        <View style={{backgroundColor: 'red', height: '100px'}}>
-            <Text>{text}</Text>
+        <View style={{flexDirection: 'row'}}>
+            <View style={{backgroundColor: 'blue', height: 'auto', flex:0.04, marginLeft:'2vw'}}></View>
+            <View style={{backgroundColor: 'red', height: 'auto', marginLeft:'2vw', flex:0.9, paddingBottom:'3%'}}>
+                <View style={{flexDirection: 'row'}}>
+                    <Text style={{fontSize: '20px', fontWeight:'bold', fontFamily:'verdana'}}>{user}</Text>
+                    <Text style={{marginLeft:'1vw'}}>{date}</Text>
+                </View>
+                <Text style={{fontSize: '20px', fontFamily:'verdana'}}>{text}</Text>
+            </View>
         </View>
     );
 }
 
 
 function ScreenChat2() {
-    const [text, onChangeText] = React.useState(null)
+    const [text, onChangeText] = React.useState('')
+
+    const sendAction = () => (
+        console.log((new Date()).toDateString())
+    );
 
     return (
         <>
             <ScrollView>
-                <Bubble text={"Meme"}/>
-                <Bubble text={"Meme2"}/>
+                <Bubble text={"Memes"} user={"MrMemes"} date={"A"}/>
+                <Bubble text={"Meme2"} user={"Lucida"}/>
+                <Bubble text={"Meme2"} user={"Lucida"}/>
+                <Bubble text={"Meme2"} user={"Lucida"}/>
+                <Bubble text={"Meme2"} user={"Lucida"}/>
+                <Bubble text={"Meme2"} user={"Lucida"}/>
+                <Bubble text={"Meme2"} user={"Lucida"}/>
+                <Bubble text={"Meme2"} user={"Lucida"}/>
+                <Bubble text={"Meme2"} user={"Lucida"}/>
+                <Bubble text={"Meme2"} user={"Lucida"}/>
+                <Bubble text={"Meme2"} user={"Lucida"}/>
+
+
             </ScrollView>
+            <View style={{height:'1vh'}}></View>
             <View style={styles.bottom_row}>
                 <View style={{backgroundColor: 'blue', flex: 0.8}}>
                     <TextInput style={styles.input}
@@ -36,7 +59,7 @@ function ScreenChat2() {
                 <View style={{backgroundColor: 'red', flex: 0.20, marginRight: '10px'}}>
                     <Button
                         title={"Enviar"}
-                        onPress={() => console.log("A")}/>
+                        onPress={sendAction}/>
                 </View>
 
             </View>
