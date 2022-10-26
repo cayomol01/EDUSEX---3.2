@@ -9,7 +9,7 @@ import firebase from '../../firebase';
 
 const db = firebase.firestore();
 
-function Bubble({user,text,date}) {
+const Bubble = ({user,text,date}) => {
     let linecolor = '#7585ff';
     if (user === 'drollana3214as') {
         linecolor = '#e96590'
@@ -46,7 +46,8 @@ function ScreenChat2({usuario}) {
     }, []);
 
     const sendAction = async () => {
-        const muser = 'uwuario'
+
+        const muser = usuario
         const mtext = text
         const mdate = new Date()
         const message = {
@@ -70,7 +71,7 @@ function ScreenChat2({usuario}) {
                     <Bubble user={x.user} text={x.text} date={x.date.toDate().toDateString()}/>
                 ))}
             </ScrollView>
-            <View style={{height:'1vh'}}></View>
+            <View style={{height:'1vh'}}/>
             <View style={styles.bottom_row}>
                 <View style={{backgroundColor: '#e6f4f1', flex: 0.8}}>
                     <TextInput style={styles.input}
@@ -81,7 +82,9 @@ function ScreenChat2({usuario}) {
                 <View style={{flex: 0.20, marginRight: '10px'}}>
                     <Button
                         title={"Enviar"}
-                        onPress={sendAction}/>
+                        onPress={sendAction}
+                        disabled={text.replace(/\s+/g, '').length === 0}
+                    />
                 </View>
 
             </View>
