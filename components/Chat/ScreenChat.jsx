@@ -1,91 +1,116 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
-import { View } from 'react-native';
+import { View, ScrollView, TextInput, StyleSheet, Button, Text} from 'react-native';
 import React, { useState, useCallback, useEffect } from 'react';
-import { Bubble, GiftedChat, Send } from 'react-native-gifted-chat';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { doc, setDoc } from "firebase/firestore";
 import firebase from '../../firebase';
 
 const db = firebase.firestore();
 
-function ScreenChat() {
-  const [messagesprop, setMessagesprop] = useState([]);
-  useEffect(() => {
-    firebase.firestore().collection('drollana3214as').onSnapshot((snapshot) => {
-      const newInfo = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      // console.log(newInfo);
+const Bubble = ({user,text,date}) => {
+    let linecolor = '#7585ff';
+    if (user === 'drollana3214as') {
+        linecolor = '#e96590'
+    }
 
-      setMessagesprop([
-        {
-          _id: 2,
-          text: 'Escribe tu duda, te contestare lo antes posible',
-          createdAt: new Date(),
-          user: {
-            _id: 2,
-            name: ' Username2',
-            avatar: 'https://img.freepik.com/vector-premium/perfil-avatar-mujer-icono-redondo_24640-14042.jpg',
-          },
-        },
-      ].concat(newInfo));
-    });
-  }, []);
-
-  const onSend = useCallback((messages = []) => {
-    setMessagesprop((previousMessages) => GiftedChat.append(previousMessages, messages));
-    messages[0].createdAt = String(messages[0].createdAt);
-    db.collection('drollana3214as').add(messages[0]);
-    // console.log('Mensaje enviado con exito');
-  }, []);
-  const renderSend = (props) => (
-    <Send {...props}>
-      <View>
-        <MaterialCommunityIcons
-          name="send-circle"
-          size={42}
-          color="#c2dfe3"
-        />
-      </View>
-    </Send>
-  );
-
-  const renderBubble = (props) => (
-    <Bubble
-      {...props}
-      wrapperStyle={{
-        right: {
-          backgroundColor: '#c2dfe3',
-        },
-      }}
-      textStyle={{
-        right: {
-          color: 'black',
-        },
-      }}
-    />
-  );
-
-  const scrollToBottomComponent = () => (
-    <FontAwesome name="angle-double-down" size={22} color="black" />
-  );
-
-  return (
-    <GiftedChat
-      messages={messagesprop}
-      onSend={(messages) => onSend(messages)}
-      user={{
-        _id: 1,
-      }}
-      renderBubble={renderBubble}
-      alwaysShowSend
-      renderSend={renderSend}
-      scrollToBottom
-      scrollToBottomComponent={scrollToBottomComponent}
-    />
-  );
+    return (
+        <View style={{flexDirection: 'row'}}>
+            <View style={{backgroundColor: linecolor, height: 'auto', flex:0.035, marginLeft:'2vw'}}></View>
+            <View style={{height: 'auto', marginLeft:'2vw', flex:0.9, paddingBottom:'4%'}}>
+                <View style={{flexDirection: 'row'}}>
+                    <Text style={{fontSize: '20px', fontWeight:'bold', fontFamily:'verdana', color:linecolor}}>{user}</Text>
+                    <Text style={{marginLeft:'1vw'}}>{date}</Text>
+                </View>
+                <Text style={{fontSize: '20px', fontFamily:'verdana'}}>{text}</Text>
+            </View>
+        </View>
+    );
 }
+
+function ScreenChat({route}) {
+    const {usuario} = route.params;
+    const [text, onChangeText] = React.useState('')
+
+    const [messageboard, setMessageboard] = React.useState([])
+
+    useEffect(() => {
+        firebase.firestore().collection('drollana3214as').onSnapshot((snapshot) => {
+            const newInfo = snapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+
+            setMessageboard(newInfo)
+        });
+    }, []);
+
+    const sendAction = async () => {
+
+        const muser = usuario
+        const mtext = text
+        const mdate = new Date()
+        const message = {
+            user: muser,
+            text: mtext,
+        }
+        onChangeText("")
+        //console.log(messageboard)
+        await setDoc(doc(db, "drollana3214as", mdate.getTime().toString()), {
+            user: muser,
+            text: mtext,
+            date: mdate
+        })
+        //messageboard.map((x)=> (console.log(x.date.toDate().toDateString())))
+    };
+
+    return (
+        <>
+            <ScrollView>
+                {messageboard.map((x) => (
+                    <Bubble user={x.user} text={x.text} date={x.date.toDate().toDateString()}/>
+                ))}
+            </ScrollView>
+            <View style={{height:'1vh'}}/>
+            <View style={styles.bottom_row}>
+                <View style={{backgroundColor: '#e6f4f1', flex: 0.8}}>
+                    <TextInput style={styles.input}
+                               onChangeText={onChangeText}
+                               value={text}
+                               placeholder={'Escribe tu Mensaje...'}/>
+                </View>
+                <View style={{flex: 0.20, marginRight: '10px'}}>
+                    <Button
+                        title={"Enviar"}
+                        onPress={sendAction}
+                        disabled={text.replace(/\s+/g, '').length === 0}
+                    />
+                </View>
+
+            </View>
+        </>
+    );
+}
+
+const styles = StyleSheet.create({
+    bottom_row:{
+        width: '100%',
+        height: '10%',
+        backgroundColor: '#e6f4f1',
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    input:{
+        height: '5vh',
+        width: '95%',
+        margin: '10px',
+        padding: '10px',
+        backgroundColor: 'white',
+
+
+    }
+})
+
 
 export default ScreenChat;

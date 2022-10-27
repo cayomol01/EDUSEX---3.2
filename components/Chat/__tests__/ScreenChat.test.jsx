@@ -3,19 +3,19 @@ import renderer from 'react-test-renderer';
 import { render, screen, fireEvent, act} from '@testing-library/react-native'
 import { cleanup } from '@testing-library/react-native';
 
-import ScreenChat2 from '../ScreenChat2';
+import ScreenChat2 from '../ScreenChat';
 
 
 afterEach(cleanup);
 
 
 test('renders correctly', () => {
-    const tree = renderer.create(<ScreenChat2/>).toJSON();
+    const tree = renderer.create(<ScreenChat2 route={{params:"debug"}}/>).toJSON();
     expect(tree).toMatchSnapshot();
 });
 
 test('Test "Enviar" button', async () => {
-    render(<ScreenChat2/>)
+    render(<ScreenChat2 route={{params:"debug"}}/>)
 
     const Button = await screen.findByText('Enviar')
     expect(Button).toBeTruthy()
@@ -24,7 +24,7 @@ test('Test "Enviar" button', async () => {
 });
 
 test('Message input', async () => {
-    render(<ScreenChat2 usuario={'debug'}/>)
+    render(<ScreenChat2 route={{params:"debug"}}/>)
 
     const inptxt = screen.getByPlaceholderText('Escribe tu Mensaje...')
     expect(inptxt).toBeTruthy()
@@ -37,12 +37,12 @@ test('Message input', async () => {
     fireEvent(Button, 'press')
 
 
-    const tezt = await screen.findByText('MemesPrueba')
+    const tezt = await screen.findAllByText('MemesPrueba')
     expect(tezt).toBeTruthy()
 });
 
 test('Blank message input', async () => {
-    render(<ScreenChat2 usuario={'debug'}/>)
+    render(<ScreenChat2 route={{params:"debug"}}/>)
 
 
     const inptxt = screen.getByPlaceholderText('Escribe tu Mensaje...')
@@ -59,7 +59,7 @@ test('Blank message input', async () => {
 });
 
 test('Expert message input', async () => {
-    render(<ScreenChat2 usuario={'drollana3214as'}/>)
+    render(<ScreenChat2 route={{params:"drollana3214as"}}/>)
 
     const inptxt = screen.getByPlaceholderText('Escribe tu Mensaje...')
     expect(inptxt).toBeTruthy()
@@ -71,6 +71,6 @@ test('Expert message input', async () => {
 
     fireEvent(Button, 'press')
 
-    const tezt = await screen.findByText('Su mensaje sera procesado')
+    const tezt = await screen.findAllByText('Su mensaje sera procesado')
     expect(tezt).toBeTruthy()
 });
