@@ -72,6 +72,7 @@ function Login({ navigation }) {
       <StatusBar styles="auto" />
       <TouchableOpacity
         onPress={() => navigation.navigate('Expertos')}
+        testID = {"Login-Expertos"}
       >
         <View style={styles.Button}>
           <Text style={styles.text}>

@@ -149,6 +149,7 @@ function Expertos({ navigation }) {
               onPress={
                         () => navigation.navigate('Login')
                     }
+              testID = {'Login1'}
             >
               <View style={styles.containerCards}>
                 <Image style={styles.imageProfile} source={require('../../assets/Person1.png')} />
@@ -165,6 +166,7 @@ function Expertos({ navigation }) {
               onPress={
                         () => navigation.navigate('Login')
                     }
+              testID={'Login2'}
             >
               <View style={styles.containerCards}>
                 <Image style={styles.imageProfile} source={require('../../assets/perfil2.png')} />
@@ -181,6 +183,7 @@ function Expertos({ navigation }) {
               onPress={
                         () => navigation.navigate('Login')
                     }
+              testID={'Login3'}
             >
               <View style={styles.containerCards}>
                 <Image style={styles.imageProfile} source={require('../../assets/Person1.png')} />
@@ -197,6 +200,7 @@ function Expertos({ navigation }) {
               onPress={
                         () => navigation.navigate('Login')
                     }
+              testID={'Login4'}
             >
               <View style={styles.containerCards}>
                 <Image style={styles.imageProfile} source={require('../../assets/perfil2.png')} />
@@ -218,6 +222,7 @@ function Expertos({ navigation }) {
             onPress={
                     () => navigation.navigate('Guias')
                 }
+            testID={'Guias'}
           >
             <Image style={styles.iconsMenu} source={guidesIMG} />
           </TouchableOpacity>
@@ -225,6 +230,7 @@ function Expertos({ navigation }) {
             onPress={
                     () => navigation.navigate('Condoms')
                 }
+            testID={'Condones'}
           >
             <Image style={styles.iconsMenu} source={preserIMG} />
           </TouchableOpacity>
@@ -232,6 +238,7 @@ function Expertos({ navigation }) {
             onPress={
                     () => navigation.navigate('MenuP')
                 }
+            testID={'Menu-p'}
           >
             <Image style={styles.iconsMenu} source={homeIMG} />
           </TouchableOpacity>
@@ -239,6 +246,7 @@ function Expertos({ navigation }) {
             onPress={
                     () => navigation.navigate('Experts')
                 }
+            testID={'Expertos'}
           >
             <Image style={styles.iconsMenu} source={questionsIMG} />
           </TouchableOpacity>
@@ -246,6 +254,7 @@ function Expertos({ navigation }) {
             onPress={
                   () => navigation.navigate('Users')
                 }
+            testID={'Usuarios'}
           >
             <Image style={styles.iconsMenu} source={profileIMG} />
           </TouchableOpacity>
