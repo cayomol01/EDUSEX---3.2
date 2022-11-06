@@ -246,7 +246,7 @@ function Expertos({ navigation }) {
             onPress={
                     () => navigation.navigate('Experts')
                 }
-            testID={'Expertos'}
+            testID={'Experts'}
           >
             <Image style={styles.iconsMenu} source={questionsIMG} />
           </TouchableOpacity>
